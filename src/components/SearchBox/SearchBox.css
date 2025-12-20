@@ -1,0 +1,81 @@
+.search-card {
+  background: var(--surface-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  padding: 25px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.search-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: var(--text-primary);
+}
+
+/* The 4-column grid as seen in your image */
+.search-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px 20px;
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* Styling inputs to match your image placeholders */
+.field-group input {
+  padding: 8px 12px;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+/* Bottom Buttons Row */
+.search-actions {
+  grid-column: span 4;
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.btn-main-search {
+  flex: 1;
+  background-color: var(--brand-primary); /* Dark button like your image */
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.btn-reset {
+  padding: 0 25px;
+  background: #f8f8f8;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Responsive adjustment for Mobile */
+@media (max-width: 768px) {
+  .search-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .search-actions {
+    grid-column: span 2;
+  }
+}

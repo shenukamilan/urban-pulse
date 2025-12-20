@@ -1,0 +1,29 @@
+.search-page-layout {
+  display: flex;
+  gap: 25px;
+  max-width: 1400px;
+  margin: 40px auto;
+  padding: 0 20px;
+  align-items: flex-start;
+  height: 100vh;
+}
+
+.search-main-column {
+  flex: 3; /* The SearchBox gets 75% of the width */
+}
+
+.search-sidebar-placeholder {
+  flex: 1; /* Reserved 25% for Favourites sidebar later */
+  min-height: 200px;
+  /* border: 1px dashed var(--border-subtle); Optional: shows where sidebar will go */
+}
+
+/* Tablet/Mobile View: Stack them vertically */
+@media (max-width: 1024px) {
+  .search-page-layout {
+    flex-direction: column;
+  }
+  .search-main-column, .search-sidebar-placeholder {
+    width: 100%;
+  }
+}
