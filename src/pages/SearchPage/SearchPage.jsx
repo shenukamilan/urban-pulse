@@ -3,6 +3,7 @@ import './SearchPage.css';
 import SearchBox from '../../components/SearchBox/SearchBox';
 import PropertyCard from '../../components/PropertyCard/PropertyCard';
 import propertiesData from "../../data/properties.json";
+import FavouritesSidebar from '../../components/FavouritesSidebar/FavouritesSidebar';
 
 const SearchPage = () => {
     const [filters, setfilters] = useState({
@@ -78,6 +79,7 @@ const SearchPage = () => {
 
             {/* SIDEBAR FOR FAVOURITES (Reserved Space) */}
             <aside className="search-sidebar-placeholder">
+                <FavouritesSidebar/>
             </aside>
         </div>
     );

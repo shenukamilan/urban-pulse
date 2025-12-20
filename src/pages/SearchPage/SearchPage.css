@@ -10,6 +10,11 @@
 .search-main-column {
   flex: 3; /* The SearchBox gets 75% of the width */
 }
+.search-sidebar-placeholder {
+  flex: 1; /* 25% width */
+  position: sticky;
+  top: 20px; /* Sidebar sticks when scrolling */
+}
 
 .properties-grid {
   display: grid;
