@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './SearchPage.css';
 import SearchBox from '../../components/SearchBox/SearchBox';
-import PropertyCard from '../../components/PropertyCard/PropertyCard'; // Don't forget this!
+import PropertyCard from '../../components/PropertyCard/PropertyCard';
 import propertiesData from "../../data/properties.json";
 
 const SearchPage = () => {

@@ -58,8 +58,6 @@ const SearchBox = ({ filters, setfilters, onSearch, onReset }) => {
                 </div>
 
                 {/* Row 2 */}
-
-
                 <div className="field-group">
                     <label>Min Bedrooms</label>
                     <input

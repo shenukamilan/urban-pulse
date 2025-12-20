@@ -64,14 +64,14 @@
   margin: 0;
 }
 
-/* Perfect alignment for Bed and Location icons */
+/* Alignment for Bed and Location icons */
 .prop-specs, .prop-location {
   display: flex;
-  align-items: center; /* Vertically center icon and text */
+  align-items: center; 
   gap: 10px;
   color: #666;
   font-size: 14px;
-  line-height: 1; /* Helps baseline alignment */
+  line-height: 1; 
 }
 
 .prop-icon {
