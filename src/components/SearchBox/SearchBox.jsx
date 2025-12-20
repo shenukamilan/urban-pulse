@@ -5,7 +5,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import { Search } from 'lucide-react';
 import './SearchBox.css';
 
-const SearchBox = ({ formData, setFormData, onSearch, onReset }) => {
+const SearchBox = ({ filters, setfilters, onSearch, onReset }) => {
     return (
         <div className="search-card">
             <h2 className="search-title">Search Properties</h2>
@@ -18,8 +18,8 @@ const SearchBox = ({ formData, setFormData, onSearch, onReset }) => {
                     <Select
                         placeholder="Any"
                         options={[{ value: 'any', label: 'Any' }, { value: 'House', label: 'House' }, { value: 'Flat', label: 'Flat' }]}
-                        value={formData.type}
-                        onChange={(value) => setFormData({ ...formData, type: value })}
+                        value={filters.type}
+                        onChange={(value) => setfilters({ ...filters, type: value })}
                     />
                 </div>
 
@@ -28,8 +28,8 @@ const SearchBox = ({ formData, setFormData, onSearch, onReset }) => {
                     <input
                         type="text"
                         placeholder="e.g. BR1, BR5"
-                        value={formData.postcode}
-                        onChange={(e) => setFormData({ ...formData, postcode: e.target.value })}
+                        value={filters.postcode}
+                        onChange={(e) => setfilters({ ...filters, postcode: e.target.value })}
                     />
                 </div>
 
@@ -38,10 +38,10 @@ const SearchBox = ({ formData, setFormData, onSearch, onReset }) => {
                     <input
                         type="number"
                         placeholder="e.g. 200000"
-                        value={formData.minPrice}
+                        value={filters.minPrice}
                         step="10000"
                         min="0"
-                        onChange={(e) => setFormData({ ...formData, minPrice: e.target.value })}
+                        onChange={(e) => setfilters({ ...filters, minPrice: e.target.value })}
                     />
                 </div>
 
@@ -50,10 +50,10 @@ const SearchBox = ({ formData, setFormData, onSearch, onReset }) => {
                     <input
                         type="number"
                         placeholder="e.g. 800000"
-                        value={formData.maxPrice}
+                        value={filters.maxPrice}
                         step="10000"
                         min="0"
-                        onChange={(e) => setFormData({ ...formData, maxPrice: e.target.value })}
+                        onChange={(e) => setfilters({ ...filters, maxPrice: e.target.value })}
                     />
                 </div>
 
@@ -65,9 +65,9 @@ const SearchBox = ({ formData, setFormData, onSearch, onReset }) => {
                     <input
                         type="number"
                         placeholder="e.g. 2"
-                        value={formData.minBedrooms}
+                        value={filters.minBedrooms}
                         min="1"
-                        onChange={(e) => setFormData({ ...formData, minBedrooms: e.target.value })}
+                        onChange={(e) => setfilters({ ...filters, minBedrooms: e.target.value })}
                     />
                 </div>
 
@@ -76,17 +76,17 @@ const SearchBox = ({ formData, setFormData, onSearch, onReset }) => {
                     <input
                         type="number"
                         placeholder="e.g. 2"
-                        value={formData.maxBedrooms}
+                        value={filters.maxBedrooms}
                         min="1"
-                        onChange={(e) => setFormData({ ...formData, maxBedrooms: e.target.value })}
+                        onChange={(e) => setfilters({ ...filters, maxBedrooms: e.target.value })}
                     />
                 </div>
 
                 <div className="field-group">
                     <label>Added After</label>
                     <DatePicker
-                        selected={formData.startDate}
-                        onChange={(date) => setFormData({ ...formData, startDate: date })}
+                        selected={filters.startDate}
+                        onChange={(date) => setfilters({ ...filters, startDate: date })}
                         placeholderText="mm/dd/yyyy"
                     />
                 </div>

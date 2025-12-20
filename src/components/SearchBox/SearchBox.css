@@ -1,3 +1,4 @@
+/* --- Search Box Container --- */
 .search-card {
   background: var(--surface-card);
   border: 1px solid var(--border-subtle);
@@ -12,7 +13,7 @@
   color: var(--text-primary);
 }
 
-/* The 4-column grid as seen in your image */
+/* --- Base Desktop Grid (4 Columns) --- */
 .search-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -31,25 +32,35 @@
   color: var(--text-primary);
 }
 
-/* Styling inputs to match your image placeholders */
 .field-group input {
   padding: 8px 12px;
   border: 1px solid #eee;
   border-radius: 4px;
   font-size: 14px;
+  width: 100%; /* Ensures input fills the grid cell */
+  box-sizing: border-box;
 }
 
-/* Bottom Buttons Row */
+/* --- Widget Fixes (DatePicker & Select) --- */
+.react-datepicker-wrapper {
+  width: 100%; /* Forces DatePicker to be responsive */
+}
+
+.react-datepicker__input-container input {
+  width: 100%;
+}
+
+/* --- Action Buttons --- */
 .search-actions {
-  grid-column: span 4;
+  grid-column: span 4; /* Spans full width of the grid */
   display: flex;
   gap: 12px;
   margin-top: 10px;
 }
 
 .btn-main-search {
-  flex: 1;
-  background-color: var(--brand-primary); /* Dark button like your image */
+  flex: 3; /* Makes the search button larger than reset */
+  background-color: var(--brand-primary);
   color: white;
   border: none;
   padding: 12px;
@@ -60,30 +71,59 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
+  transition: background 0.2s ease;
 }
 
 .btn-main-search:hover {
-  background-color: #002e5b; /* Darker on hover */
+  filter: brightness(90%);
 }
 
 .btn-reset {
+  flex: 1;
   padding: 0 25px;
   background: #f8f8f8;
   border: 1px solid #eee;
   border-radius: 4px;
   cursor: pointer;
+  transition: background 0.2s ease;
 }
 
-.btn-reset:active, .btn-main-search:active {
-  transform: scale(1.01);
+.btn-reset:hover {
+  background: #f0f0f0;
 }
 
-/* Responsive adjustment for Mobile */
-@media (max-width: 768px) {
+/* --- RESPONSIVENESS TIERS --- */
+
+
+
+/* Tablet View (2 Columns) */
+@media (max-width: 1024px) {
   .search-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
+  
   .search-actions {
     grid-column: span 2;
+  }
+}
+
+/* Mobile View (1 Column) */
+@media (max-width: 600px) {
+  .search-card {
+    padding: 15px;
+  }
+
+  .search-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .search-actions {
+    grid-column: span 1;
+    flex-direction: column; /* Stacks buttons vertically on small screens */
+  }
+
+  .btn-main-search, .btn-reset {
+    width: 100%;
+    padding: 14px; /* Larger touch target for mobile */
   }
 }
