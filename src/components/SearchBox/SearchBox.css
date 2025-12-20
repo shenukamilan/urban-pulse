@@ -62,12 +62,20 @@
   gap: 10px;
 }
 
+.btn-main-search:hover {
+  background-color: #002e5b; /* Darker on hover */
+}
+
 .btn-reset {
   padding: 0 25px;
   background: #f8f8f8;
   border: 1px solid #eee;
   border-radius: 4px;
   cursor: pointer;
+}
+
+.btn-reset:active, .btn-main-search:active {
+  transform: scale(1.01);
 }
 
 /* Responsive adjustment for Mobile */

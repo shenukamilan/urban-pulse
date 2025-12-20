@@ -18,7 +18,8 @@ const SearchBox = ({ formData, setFormData, onSearch, onReset }) => {
                     <Select
                         placeholder="Any"
                         options={[{ value: 'any', label: 'Any' }, { value: 'House', label: 'House' }, { value: 'Flat', label: 'Flat' }]}
-                        onChange={(opt) => setFormData({ ...formData, type: opt.value })}
+                        value={formData.type}
+                        onChange={(value) => setFormData({ ...formData, type: value })}
                     />
                 </div>
 
@@ -27,6 +28,7 @@ const SearchBox = ({ formData, setFormData, onSearch, onReset }) => {
                     <input
                         type="text"
                         placeholder="e.g. BR1, BR5"
+                        value={formData.postcode}
                         onChange={(e) => setFormData({ ...formData, postcode: e.target.value })}
                     />
                 </div>
@@ -36,6 +38,7 @@ const SearchBox = ({ formData, setFormData, onSearch, onReset }) => {
                     <input
                         type="number"
                         placeholder="e.g. 200000"
+                        value={formData.minPrice}
                         step="10000"
                         min="0"
                         onChange={(e) => setFormData({ ...formData, minPrice: e.target.value })}
@@ -47,6 +50,7 @@ const SearchBox = ({ formData, setFormData, onSearch, onReset }) => {
                     <input
                         type="number"
                         placeholder="e.g. 800000"
+                        value={formData.maxPrice}
                         step="10000"
                         min="0"
                         onChange={(e) => setFormData({ ...formData, maxPrice: e.target.value })}
@@ -61,7 +65,8 @@ const SearchBox = ({ formData, setFormData, onSearch, onReset }) => {
                     <input
                         type="number"
                         placeholder="e.g. 2"
-                        min="0"
+                        value={formData.minBedrooms}
+                        min="1"
                         onChange={(e) => setFormData({ ...formData, minBedrooms: e.target.value })}
                     />
                 </div>
@@ -71,12 +76,11 @@ const SearchBox = ({ formData, setFormData, onSearch, onReset }) => {
                     <input
                         type="number"
                         placeholder="e.g. 2"
-                        min="0"
+                        value={formData.maxBedrooms}
+                        min="1"
                         onChange={(e) => setFormData({ ...formData, maxBedrooms: e.target.value })}
                     />
                 </div>
-
-
 
                 <div className="field-group">
                     <label>Added After</label>
