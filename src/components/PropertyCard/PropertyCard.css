@@ -1,0 +1,87 @@
+.prop-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #efefef;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.prop-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+.prop-image-wrapper {
+  position: relative;
+  height: 220px;
+  width: 100%;
+}
+
+.prop-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.heart-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  padding: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.heart-btn:hover {
+  background: white;
+  transform: scale(1.1);
+}
+.heart-btn:active {
+  background-color: var(--brand-primary);
+  color: white;
+}
+
+.prop-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.prop-price {
+  font-size: 24px;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+/* Perfect alignment for Bed and Location icons */
+.prop-specs, .prop-location {
+  display: flex;
+  align-items: center; /* Vertically center icon and text */
+  gap: 10px;
+  color: #666;
+  font-size: 14px;
+  line-height: 1; /* Helps baseline alignment */
+}
+
+.prop-icon {
+  flex-shrink: 0;
+  color: #888;
+}
+
+.prop-description {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+  margin-top: 4px;
+}

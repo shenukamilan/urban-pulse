@@ -1,13 +1,10 @@
 import React, { useState } from 'react';
 import './SearchPage.css';
 import SearchBox from '../../components/SearchBox/SearchBox';
-
+import PropertyCard from '../../components/PropertyCard/PropertyCard'; // Don't forget this!
 import propertiesData from "../../data/properties.json";
 
-
 const SearchPage = () => {
-    // Draft (editable) filters
-
     const [filters, setfilters] = useState({
         type: null,
         minPrice: '',
@@ -20,10 +17,9 @@ const SearchPage = () => {
 
     const [appliedFilters, setAppliedFilters] = useState(filters);
 
-
     const handleSearch = (e) => {
-        if (e) e.preventDefault(); // This stops the page from refreshing!
-        setAppliedFilters(filters)
+        if (e) e.preventDefault();
+        setAppliedFilters(filters);
     };
 
     const handleReset = () => {
@@ -32,51 +28,29 @@ const SearchPage = () => {
             minBedrooms: '', maxBedrooms: '',
             postcode: '', startDate: null
         });
+        setAppliedFilters({ 
+            type: null, minPrice: '', maxPrice: '',
+            minBedrooms: '', maxBedrooms: '',
+            postcode: '', startDate: null
+        });
     };
 
     const filteredProperties = propertiesData.properties.filter((property) => {
-        // FIX: Match the names exactly to your 'filters' state object
-        const {
-            type,
-            minPrice,
-            maxPrice,
-            minBedrooms, // Changed from minBeds
-            maxBedrooms, // Changed from maxBeds
-            startDate,
-            postcode
-        } = appliedFilters;
+        const { type, minPrice, maxPrice, minBedrooms, maxBedrooms, startDate, postcode } = appliedFilters;
 
-        // 1. Property Type
-        if (type && type.value !== "any" && property.type !== type.value) {
-            return false;
-        }
-
-        // 2. Price Filters
+        if (type && type.value !== "any" && property.type !== type.value) return false;
         if (minPrice && property.price < Number(minPrice)) return false;
         if (maxPrice && property.price > Number(maxPrice)) return false;
-
-        // 3. Bedroom Filters (Using fixed names)
         if (minBedrooms && property.bedrooms < Number(minBedrooms)) return false;
         if (maxBedrooms && property.bedrooms > Number(maxBedrooms)) return false;
-
-        // 4. Date Logic
         if (startDate) {
-            const addedDate = new Date(
-                property.added.year,
-                new Date(`${property.added.month} 1`).getMonth(),
-                property.added.day
-            );
+            const addedDate = new Date(property.added.year, new Date(`${property.added.month} 1`).getMonth(), property.added.day);
             if (addedDate < startDate) return false;
         }
-
-        // 5. Postcode Logic (using .includes for better search)
-        if (postcode && !property.location.toUpperCase().includes(postcode.toUpperCase())) {
-            return false;
-        }
+        if (postcode && !property.location.toUpperCase().includes(postcode.toUpperCase())) return false;
 
         return true;
     });
-
 
     return (
         <div className="search-page-layout">
@@ -87,30 +61,24 @@ const SearchPage = () => {
                     onSearch={handleSearch}
                     onReset={handleReset}
                 />
+
+                <div className="properties-grid">
+                    {filteredProperties.length > 0 ? (
+                        filteredProperties.map((property) => (
+                            <PropertyCard key={property.id} property={property} />
+                        ))
+                    ) : (
+                        <div className="no-results-state">
+                            <h3>No matching properties</h3>
+                            <p>Try adjusting your search filters to find what you're looking for.</p>
+                        </div>
+                    )}
+                </div>
             </div>
 
-            <div>
-                <h2>Filtered Properties ({filteredProperties.length} found)</h2>
-                
-                {filteredProperties.length > 0 ? (
-                    <ul>
-                        {filteredProperties.map((property) => (
-                            <li key={property.id} style={{ marginBottom: '20px', listStyle: 'none'}}>
-                                <strong>ID:</strong> {property.id} <br />
-                                <strong>Location:</strong> {property.location} <br />
-                                <strong>Price:</strong> £{property.price.toLocaleString()} <br />
-                                <strong>Type:</strong> {property.type} <br />
-                                <strong>Bedrooms:</strong> {property.bedrooms} <br />
-                                <strong>Added:</strong> {property.added.day} {property.added.month} {property.added.year}
-                            </li>
-                        ))}
-                    </ul>
-                ) : (
-                    <p>No properties match your current search.</p>
-                )}
-            </div>
-
-            <aside className="search-sidebar-placeholder"></aside>
+            {/* SIDEBAR FOR FAVOURITES (Reserved Space) */}
+            <aside className="search-sidebar-placeholder">
+            </aside>
         </div>
     );
 };
