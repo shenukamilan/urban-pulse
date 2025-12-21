@@ -1,0 +1,8 @@
+.property-page-layout {
+  display: flex;
+  gap: 25px;
+  max-width: 1400px;
+  margin: 40px auto;
+  padding: 0 20px;
+  align-items: flex-start;
+}
