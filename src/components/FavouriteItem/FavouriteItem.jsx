@@ -7,7 +7,7 @@ const FavouriteItem = ({ item }) => {
     <div className="fav-item">
       <div className="fav-thumb-container">
         <img
-          src={item.images[1]}
+          src={item.images[0]}
           alt={item.type}
           className="fav-thumb"
         />

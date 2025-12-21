@@ -1,5 +1,6 @@
 .property-page-layout {
   display: flex;
+  flex-direction: column;
   gap: 25px;
   max-width: 1400px;
   margin: 40px auto;

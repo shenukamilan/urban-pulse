@@ -6,7 +6,7 @@ const PropertyCard = ({ property }) => {
   return (
     <div className="prop-card">
       <div className="prop-image-wrapper">
-        <img src={property.images[1]} alt={property.type} className="prop-image" />
+        <img src={property.images[0]} alt={property.type} className="prop-image" />
         <button className="heart-btn">
           <Heart size={20} />
         </button>

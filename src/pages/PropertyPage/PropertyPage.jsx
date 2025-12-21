@@ -3,6 +3,7 @@ import propertiesData from "../../data/properties.json"
 import PropertyHeader from '../../components/PropertyHeader/PropertyHeader';
 import PropertyInfoBar from '../../components/PropertyInfoBar/PropertyInfoBar';
 import './PropertyPage.css';
+import ImageGallery from '../../components/PropertyGallery/PropertyGallery';
 
 
 function PropertyPage() {
@@ -16,6 +17,9 @@ function PropertyPage() {
         onBack={() => console.log("Go back")}
       />
       <div className="property-page-layout">
+        <ImageGallery
+          images={currentProperty.images}
+        />
         <PropertyInfoBar
           property={currentProperty}
           isFavourite={true}
