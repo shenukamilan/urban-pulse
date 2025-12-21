@@ -4,7 +4,7 @@ import 'react-image-gallery/styles/css/image-gallery.css';
 import './PropertyGallery.css';
 
 const PropertyGallery = ({ images }) => {
- 
+
   const galleryItems = images.map((image) => {
     return {
       original: image,
@@ -14,11 +14,11 @@ const PropertyGallery = ({ images }) => {
 
   return (
     <div className="gallery">
-      <ImageGallery 
-        items={galleryItems} 
+      <ImageGallery
+        items={galleryItems}
         showPlayButton={false}
-        showIndex={true}    
-        showFullscreenButton={true} 
+        showIndex={true}
+        showFullscreenButton={true}
       />
     </div>
   );

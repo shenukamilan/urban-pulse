@@ -4,6 +4,7 @@ import PropertyHeader from '../../components/PropertyHeader/PropertyHeader';
 import PropertyInfoBar from '../../components/PropertyInfoBar/PropertyInfoBar';
 import './PropertyPage.css';
 import ImageGallery from '../../components/PropertyGallery/PropertyGallery';
+import PropertyTabs from '../../components/PropertyTabs/PropertyTabs';
 
 
 function PropertyPage() {
@@ -23,6 +24,9 @@ function PropertyPage() {
         <PropertyInfoBar
           property={currentProperty}
           isFavourite={true}
+        />
+        <PropertyTabs
+          property={currentProperty}
         />
       </div>
 
