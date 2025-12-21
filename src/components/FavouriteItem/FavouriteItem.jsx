@@ -6,13 +6,13 @@ const FavouriteItem = ({ item }) => {
   return (
     <div className="fav-item">
       <div className="fav-thumb-container">
-        <img 
-          src={item.picture} 
-          alt={item.type} 
-          className="fav-thumb" 
+        <img
+          src={item.picture}
+          alt={item.type}
+          className="fav-thumb"
         />
       </div>
-      
+
       <div className="fav-info">
         <h4>£{item.price.toLocaleString()}</h4>
         <p>{item.bedrooms} bed {item.type}</p>

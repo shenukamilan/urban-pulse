@@ -1,0 +1,65 @@
+.property-header-section {
+  width: 100%;
+  background-color: var(--brand-primary);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.property-header-content {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0;
+  padding: 35px 90px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.back-nav-btn {
+  background: transparent;
+  border: none;
+  color: #cccccc;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  padding: 0;
+  width: fit-content;
+  transition: color 0.2s ease;
+}
+
+.back-nav-btn:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.property-title {
+  font-size: 30px;
+  font-weight: 700;
+  color: white;
+  margin: 0 0 12px;
+  line-height: 1.2;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .property-header-content {
+    padding: 36px 20px 28px;
+  }
+
+  .property-title {
+    font-size: 32px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .property-header-content {
+    padding: 28px 16px 24px;
+  }
+
+  .property-title {
+    font-size: 24px;
+  }
+}

@@ -4,6 +4,7 @@ import SearchBox from '../../components/SearchBox/SearchBox';
 import PropertyCard from '../../components/PropertyCard/PropertyCard';
 import propertiesData from "../../data/properties.json";
 import FavouritesSidebar from '../../components/FavouritesSidebar/FavouritesSidebar';
+import Header from '../../components/Header/header';
 
 const SearchPage = () => {
     const [filters, setfilters] = useState({
@@ -29,7 +30,7 @@ const SearchPage = () => {
             minBedrooms: '', maxBedrooms: '',
             postcode: '', startDate: null
         });
-        setAppliedFilters({ 
+        setAppliedFilters({
             type: null, minPrice: '', maxPrice: '',
             minBedrooms: '', maxBedrooms: '',
             postcode: '', startDate: null
@@ -54,34 +55,37 @@ const SearchPage = () => {
     });
 
     return (
-        <div className="search-page-layout">
-            <div className="search-main-column">
-                <SearchBox
-                    filters={filters}
-                    setfilters={setfilters}
-                    onSearch={handleSearch}
-                    onReset={handleReset}
-                />
+        <>
+            <Header />
+            <div className="search-page-layout">
+                <div className="search-main-column">
+                    <SearchBox
+                        filters={filters}
+                        setfilters={setfilters}
+                        onSearch={handleSearch}
+                        onReset={handleReset}
+                    />
 
-                <div className="properties-grid">
-                    {filteredProperties.length > 0 ? (
-                        filteredProperties.map((property) => (
-                            <PropertyCard key={property.id} property={property} />
-                        ))
-                    ) : (
-                        <div className="no-results-state">
-                            <h3>No matching properties</h3>
-                            <p>Try adjusting your search filters to find what you're looking for.</p>
-                        </div>
-                    )}
+                    <div className="properties-grid">
+                        {filteredProperties.length > 0 ? (
+                            filteredProperties.map((property) => (
+                                <PropertyCard key={property.id} property={property} />
+                            ))
+                        ) : (
+                            <div className="no-results-state">
+                                <h3>No matching properties</h3>
+                                <p>Try adjusting your search filters to find what you're looking for.</p>
+                            </div>
+                        )}
+                    </div>
                 </div>
-            </div>
 
-            {/* SIDEBAR FOR FAVOURITES (Reserved Space) */}
-            <aside className="search-sidebar-placeholder">
-                <FavouritesSidebar/>
-            </aside>
-        </div>
+                {/* SIDEBAR FOR FAVOURITES (Reserved Space) */}
+                <aside className="search-sidebar-placeholder">
+                    <FavouritesSidebar />
+                </aside>
+            </div>
+        </>
     );
 };
 
