@@ -1,3 +1,7 @@
+.prop-card-link {
+  text-decoration: none;
+}
+
 .prop-card {
   background: white;
   border-radius: 12px;
@@ -7,11 +11,12 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+  text-decoration: none;
 }
 
 .prop-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
 }
 
 .prop-image-wrapper {
@@ -45,6 +50,7 @@
   background: white;
   transform: scale(1.1);
 }
+
 .heart-btn:active {
   background-color: var(--brand-primary);
   color: white;
@@ -65,13 +71,14 @@
 }
 
 /* Alignment for Bed and Location icons */
-.prop-specs, .prop-location {
+.prop-specs,
+.prop-location {
   display: flex;
-  align-items: center; 
+  align-items: center;
   gap: 10px;
   color: #666;
   font-size: 14px;
-  line-height: 1; 
+  line-height: 1;
 }
 
 .prop-icon {

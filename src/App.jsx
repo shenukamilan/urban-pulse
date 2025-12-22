@@ -11,7 +11,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<SearchPage />} />
-          <Route path='/property' element={<PropertyPage />} />
+          <Route path='/property/:id' element={<PropertyPage />} />
         </Routes>
         <Footer />
       </BrowserRouter>

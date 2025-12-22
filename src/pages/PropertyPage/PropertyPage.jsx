@@ -5,11 +5,33 @@ import PropertyInfoBar from '../../components/PropertyInfoBar/PropertyInfoBar';
 import './PropertyPage.css';
 import ImageGallery from '../../components/PropertyGallery/PropertyGallery';
 import PropertyTabs from '../../components/PropertyTabs/PropertyTabs';
+import { useParams } from 'react-router-dom';
+import { useEffect } from 'react';
+import Header from '../../components/Header/header';
 
 
-function PropertyPage() {
+const PropertyPage = () => {
 
-  let currentProperty = propertiesData.properties[0];
+  const { id } = useParams();
+
+  const currentProperty = propertiesData.properties.find((p) => String(p.id) === id);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [id]);
+
+  if (!currentProperty) {
+    return (
+      <>
+        <Header />
+        <div className="property-not-found">
+          <h1>Property Not Found</h1>
+          <p>We couldn't find the property you're looking for.</p>
+        </div>
+      </>
+    );
+  }
+  
   return (
     <>
 
@@ -32,6 +54,6 @@ function PropertyPage() {
 
     </>
   )
-}
+};
 
 export default PropertyPage
