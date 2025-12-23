@@ -2,23 +2,25 @@ import React, { useContext } from 'react';
 import { X } from 'lucide-react';
 import './FavouriteItem.css'
 import { FavoritesContext } from '../../context/FavoritesContext';
+import { Link } from 'react-router-dom';
 
 
 const FavouriteItem = ({ item }) => {
 
-    const { removeFavorite } = useContext(FavoritesContext);
-  
-  
+  const { removeFavorite } = useContext(FavoritesContext);
+
+
   return (
     <div className="fav-item">
-      <div className="fav-thumb-container">
-        <img
-          src={item.images[0]}
-          alt={item.type}
-          className="fav-thumb"
-        />
-      </div>
 
+      <Link to={`/property/${item.id}`}>
+        <div className="fav-thumb-container">
+          <img
+            src={item.images[0]}
+            alt={item.type}
+            className="fav-thumb"
+          />
+        </div></Link>
       <div className="fav-info">
         <h4>£{item.price.toLocaleString()}</h4>
         <p>{item.bedrooms} bed {item.type}</p>
