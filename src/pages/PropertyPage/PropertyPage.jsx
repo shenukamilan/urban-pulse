@@ -10,7 +10,7 @@ import { useEffect } from 'react';
 import Header from '../../components/Header/header';
 
 
-const PropertyPage = () => {
+const PropertyPage = ({ favorites, onToggleFavorite }) => {
 
   const { id } = useParams();
 
@@ -31,7 +31,7 @@ const PropertyPage = () => {
       </>
     );
   }
-  
+
   return (
     <>
 
@@ -45,7 +45,9 @@ const PropertyPage = () => {
         />
         <PropertyInfoBar
           property={currentProperty}
-          isFavourite={true}
+          isFavourite={favorites.includes(currentProperty.id)}
+          onToggleFavorite = {onToggleFavorite}
+
         />
         <PropertyTabs
           property={currentProperty}

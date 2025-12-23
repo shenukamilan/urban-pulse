@@ -6,7 +6,8 @@ import propertiesData from "../../data/properties.json";
 import FavouritesSidebar from '../../components/FavouritesSidebar/FavouritesSidebar';
 import Header from '../../components/Header/header';
 
-const SearchPage = () => {
+const SearchPage = ({ favorites, onToggleFavorite }) => {
+    
     const [filters, setfilters] = useState({
         type: null,
         minPrice: '',
@@ -69,7 +70,7 @@ const SearchPage = () => {
                     <div className="properties-grid">
                         {filteredProperties.length > 0 ? (
                             filteredProperties.map((property) => (
-                                <PropertyCard key={property.id} property={property} />
+                                <PropertyCard key={property.id} property={property} isFavorite={favorites.includes(property.id)} onToggleFavorite={onToggleFavorite} />
                             ))
                         ) : (
                             <div className="no-results-state">
@@ -80,7 +81,7 @@ const SearchPage = () => {
                     </div>
                 </div>
 
-                {/* SIDEBAR FOR FAVOURITES (Reserved Space) */}
+                {/* SIDEBAR FOR FAVOURITES*/}
                 <aside className="search-sidebar-placeholder">
                     <FavouritesSidebar />
                 </aside>

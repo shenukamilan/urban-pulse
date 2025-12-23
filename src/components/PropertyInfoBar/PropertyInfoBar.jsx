@@ -2,7 +2,7 @@ import React from 'react';
 import { Heart } from 'lucide-react';
 import './PropertyInfoBar.css';
 
-const PropertyInfoBar = ({ property, isFavourite }) => {
+const PropertyInfoBar = ({ property, isFavourite, onToggleFavorite }) => {
 
     return (
         <section className="info-bar-container">
@@ -22,7 +22,7 @@ const PropertyInfoBar = ({ property, isFavourite }) => {
             <div className="info-right-content">
                 <button
                     className={`info-fav-btn ${isFavourite ? 'active' : ''}`}
-                    onClick={() => console.log("clicked")}
+                    onClick={() => onToggleFavorite(property.id)}
                 >
                     <Heart
                         size={18}
