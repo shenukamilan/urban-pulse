@@ -1,8 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Heart } from 'lucide-react';
 import './PropertyInfoBar.css';
+import { FavoritesContext } from '../../context/FavoritesContext';
 
-const PropertyInfoBar = ({ property, isFavourite }) => {
+const PropertyInfoBar = ({ property }) => {
+
+    const { addFavorite, removeFavorite, isFavorite } = useContext(FavoritesContext);
+
+    const isLiked = isFavorite(property.id);
+
+    const handleToggle = () => {
+        if (isLiked) {
+            removeFavorite(property.id);
+        } else {
+            addFavorite(property.id);
+        }
+    };
 
     return (
         <section className="info-bar-container">
@@ -21,15 +34,15 @@ const PropertyInfoBar = ({ property, isFavourite }) => {
 
             <div className="info-right-content">
                 <button
-                    className={`info-fav-btn ${isFavourite ? 'active' : ''}`}
-                    onClick={() => console.log("clicked")}
+                    className={`info-fav-btn ${isLiked ? 'active' : ''}`}
+                    onClick={handleToggle}
                 >
                     <Heart
                         size={18}
-                        fill={isFavourite ? "white" : "none"}
+                        fill={isLiked ? "white" : "none"}
                         className="info-heart-icon"
                     />
-                    <span>{isFavourite ? "Remove from Favourites" : "Add to Favourites"}</span>
+                    <span>{isLiked ? "Remove from Favourites" : "Add to Favourites"}</span>
                 </button>
             </div>
         </section>

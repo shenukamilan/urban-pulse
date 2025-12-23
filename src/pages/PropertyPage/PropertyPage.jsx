@@ -45,7 +45,6 @@ const PropertyPage = () => {
         />
         <PropertyInfoBar
           property={currentProperty}
-          isFavourite={true}
         />
         <PropertyTabs
           property={currentProperty}
