@@ -3,13 +3,11 @@ import { Heart, MapPin, BedDouble } from 'lucide-react';
 import './PropertyCard.css';
 import { Link } from 'react-router-dom';
 
-const PropertyCard = ({ property, isFavorite, onToggleFavorite }) => {
+const PropertyCard = ({ property }) => {
 
   const handleFavoriteClick = (e) => {
     e.preventDefault(); // Prevents the Link navigation
     e.stopPropagation(); // Stops the click from bubbling up
-    onToggleFavorite(property.id);
-
   };
 
   return (
@@ -19,11 +17,7 @@ const PropertyCard = ({ property, isFavorite, onToggleFavorite }) => {
           <div className="prop-image-wrapper">
             <img src={property.images[0]} alt={property.type} className="prop-image" />
             <button className="heart-btn" onClick={handleFavoriteClick}>
-              <Heart
-                size={20}
-                fill={isFavorite ? "#490080" : "transparent"}
-                color={isFavorite ? "#490080" : "currentColor"}
-              />
+              <Heart size={20} />
             </button>
           </div>
 
