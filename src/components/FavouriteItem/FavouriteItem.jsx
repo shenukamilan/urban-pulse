@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { X } from 'lucide-react';
 import './FavouriteItem.css'
+import { FavoritesContext } from '../../context/FavoritesContext';
+
 
 const FavouriteItem = ({ item }) => {
+
+    const { removeFavorite } = useContext(FavoritesContext);
+  
+  
   return (
     <div className="fav-item">
       <div className="fav-thumb-container">
@@ -19,7 +25,7 @@ const FavouriteItem = ({ item }) => {
         <p className="fav-loc-text">{item.location.substring(0, 25)}...</p>
       </div>
 
-      <button className="fav-remove-btn" title="Remove from favourites">
+      <button className="fav-remove-btn" title="Remove from favourites" onClick={() => removeFavorite(item.id)}>
         <X size={14} />
       </button>
     </div>
