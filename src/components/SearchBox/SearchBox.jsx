@@ -5,6 +5,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import { Search } from 'lucide-react';
 import './SearchBox.css';
 
+
 const SearchBox = ({ filters, setfilters, onSearch, onReset }) => {
     return (
         <div className="search-card">
@@ -12,12 +13,17 @@ const SearchBox = ({ filters, setfilters, onSearch, onReset }) => {
 
             <form className="search-grid" onSubmit={onSearch}>
 
-                {/* Row 1 */}
+                {/* --- Row 1: Type, Location, Price Range --- */}
+
                 <div className="field-group">
                     <label>Property Type</label>
                     <Select
                         placeholder="Any"
-                        options={[{ value: 'any', label: 'Any' }, { value: 'House', label: 'House' }, { value: 'Flat', label: 'Flat' }]}
+                        options={[
+                            { value: 'any', label: 'Any' },
+                            { value: 'House', label: 'House' },
+                            { value: 'Flat', label: 'Flat' }
+                        ]}
                         value={filters.type}
                         onChange={(value) => setfilters({ ...filters, type: value })}
                     />
@@ -57,7 +63,8 @@ const SearchBox = ({ filters, setfilters, onSearch, onReset }) => {
                     />
                 </div>
 
-                {/* Row 2 */}
+                {/* --- Row 2: Bedrooms & Date --- */}
+
                 <div className="field-group">
                     <label>Min Bedrooms</label>
                     <input
@@ -73,7 +80,7 @@ const SearchBox = ({ filters, setfilters, onSearch, onReset }) => {
                     <label>Max Bedrooms</label>
                     <input
                         type="number"
-                        placeholder="e.g. 2"
+                        placeholder="e.g. 4"
                         value={filters.maxBedrooms}
                         min="1"
                         onChange={(e) => setfilters({ ...filters, maxBedrooms: e.target.value })}
@@ -89,15 +96,17 @@ const SearchBox = ({ filters, setfilters, onSearch, onReset }) => {
                     />
                 </div>
 
-                {/* Action Buttons Row */}
+                {/* --- Action Buttons --- */}
                 <div className="search-actions">
                     <button type="submit" className="btn-main-search">
                         <Search size={18} /> Search Properties
                     </button>
+
                     <button type="button" className="btn-reset" onClick={onReset}>
                         Reset
                     </button>
                 </div>
+
             </form>
         </div>
     );

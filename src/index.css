@@ -1,52 +1,25 @@
+/* --- Google Fonts Import --- */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
+/* --- Global Variables --- */
 :root {
-  /* PRIMARY ACTION COLORS */
-  --brand-primary: #490080;    
-  /* USE: Header backgrounds , main search button, and property price to direct user attention[cite: 58]. */
-
-  --brand-secondary: #006ce4;  
-  /* USE: Links and secondary action buttons. */
-
-  /* ACCENT & FEEDBACK */
-  --highlight-accent: #febd17; 
-  /* USE: Background for the search form to group related items together. */
-
-  --status-critical: #d4111e;  
-  /* USE: "Favourite" heart icon and delete/clear buttons[cite: 46, 48]. */
-
-  /* NEUTRALS & GROUPING */
-  --surface-tonal: #ebf3ff;    
-  /* USE: Subtle grouping backgrounds for search criteria or property listings. */
-
-  --surface-main: #f5f5f5;     
-  /* USE: The main site background. */
-
-  --surface-card: #ffffff;     
-  /* USE: Background for result cards to ensure they are visually connected yet distinct[cite: 55]. */
-
-  /* TYPOGRAPHY & BORDERS */
-  --text-primary: #1a1a1a;     
-  /* USE: Main headings for visual scanning. */
-
-  --text-secondary: #595959;   
-  /* USE: Short descriptions and metadata[cite: 37, 42]. */
-
-  --border-subtle: #e7e7e7;    
-  /* USE: Separating unrelated items and defining card edges. */
-  
+  /* Main brand color used across buttons, headers, and active states */
+  --primary-color: #490080;
 }
+
+/* --- CSS Reset --- */
+/* Removes default browser spacing and ensures padding doesn't affect element width */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* --- Body Styles --- */
 body {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
   line-height: 1.6;
   color: #111111;
-  background-color:var(--surface-main);
-  
+  background-color: #f5f5f5;
 }

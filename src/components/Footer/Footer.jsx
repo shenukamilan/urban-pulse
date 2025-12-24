@@ -2,6 +2,7 @@ import React from 'react';
 import './Footer.css';
 
 const Footer = () => {
+  // Automatically update the year so you don't have to change it manually
   const currentYear = new Date().getFullYear();
 
   return (

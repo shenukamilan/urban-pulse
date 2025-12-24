@@ -1,21 +1,26 @@
+/* --- Main Page Layout --- */
 .search-page-layout {
   display: flex;
   gap: 25px;
   max-width: 1400px;
   margin: 40px auto;
   padding: 0 20px;
-  align-items: flex-start;
+  align-items: flex-start; /* Aligns items to the top */
 }
 
+/* --- Left Column (Search & Results) --- */
 .search-main-column {
-  flex: 3; /* The SearchBox gets 75% of the width */
-}
-.search-sidebar-placeholder {
-  flex: 1; /* 25% width */
-  position: sticky;
-  top: 20px; /* Sidebar sticks when scrolling */
+  flex: 3; /* Takes up 75% of the available space */
 }
 
+/* --- Right Column (Sidebar) --- */
+.favourites-sidebar {
+  flex: 1; /* Takes up 25% of the available space */
+  position: sticky;
+  top: 20px; 
+}
+
+/* --- Grid for Property Cards --- */
 .properties-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -23,13 +28,14 @@
   margin-top: 30px;
 }
 
+/* --- No Results State --- */
 .no-results-state {
-  grid-column: 1 / -1; /* Spans across all available columns */
+  grid-column: 1 / -1; /* Spans across all grid columns */
   text-align: center;
   padding: 60px 20px;
   background-color: #f9f9f9;
   border-radius: 12px;
-  border: 2px dashed #eee; 
+  border: 2px dashed #eee;
   color: #666;
 }
 
@@ -39,13 +45,15 @@
   color: #333;
 }
 
-
-/* Tablet/Mobile View: Stack them vertically */
+/* --- Responsive Design (Mobile/Tablet) --- */
 @media (max-width: 1024px) {
   .search-page-layout {
-    flex-direction: column;
+    flex-direction: column; /* Stack items vertically */
   }
-  .search-main-column, .search-sidebar-placeholder {
+
+  /* Force columns to take full width on smaller screens */
+  .search-main-column,
+  .favourites-sidebar {
     width: 100%;
   }
 }

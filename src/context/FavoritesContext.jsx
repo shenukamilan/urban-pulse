@@ -5,7 +5,7 @@ const FavoritesContext = createContext();
 const FavoritesProvider = ({ children }) => {
   const [favorites, setFavorites] = useState([]);
 
-  // 1. Add ID
+  // Add ID
   const addFavorite = (id) => {
     const idString = String(id);
     setFavorites((prev) => {
@@ -16,18 +16,18 @@ const FavoritesProvider = ({ children }) => {
     });
   };
 
-  // 2. Remove ID
+  // Remove ID
   const removeFavorite = (id) => {
     const idString = String(id);
     setFavorites((prev) => prev.filter((item) => item !== idString));
   };
 
-  // 3. Clear All
+  // Clear All
   const clearFavorites = () => {
     setFavorites([]);
   };
 
-  // 4. Check if ID is in list
+  // Check if ID is in list
   const isFavorite = (id) => favorites.includes(String(id));
 
   return (

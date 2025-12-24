@@ -1,4 +1,4 @@
-/* Sidebar Container */
+/* --- Sidebar Container --- */
 .fav-sidebar-card {
   background: white;
   border: 1px solid #eee;
@@ -6,11 +6,11 @@
   padding: 16px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   width: 100%;
-  /* Ensures the sidebar stays visible while scrolling results */
   position: sticky;
   top: 20px;
 }
 
+/* --- Header Section --- */
 .fav-header {
   display: flex;
   justify-content: space-between;
@@ -27,6 +27,7 @@
   color: #333;
 }
 
+/* --- Clear Button --- */
 .btn-clear {
   background: none;
   border: none;
@@ -43,11 +44,13 @@
   color: #ff4d4f;
 }
 
+/* --- List Container --- */
 .fav-list {
   display: flex;
   flex-direction: column;
 }
 
+/* --- Empty State --- */
 .fav-empty-msg {
   font-size: 13px;
   color: #999;

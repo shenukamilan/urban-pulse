@@ -1,20 +1,21 @@
+/* --- Main Header Wrapper --- */
 .header {
   width: 100%;
-  background-color: var(--brand-primary);
-  border-bottom: 1px solid var(--border-color);
+  background-color: var(--primary-color);
 }
 
+/* --- Content Container --- */
 .header-container {
   max-width: 1200px;
   margin: 0;
   padding: 48px 90px 36px;
 }
 
+/* --- Title --- */
 .header-title-link {
   text-decoration: none;
 }
 
-/* Title */
 .header-title {
   font-size: 30px;
   font-weight: 700;
@@ -23,7 +24,7 @@
   line-height: 1.2;
 }
 
-/* Subtitle */
+/* --- Subtitle --- */
 .header-subtitle {
   font-size: 16px;
   color: rgb(203, 203, 203);
@@ -32,7 +33,7 @@
   max-width: 600px;
 }
 
-/* Tablet */
+/* --- Responsive: Tablet --- */
 @media (max-width: 768px) {
   .header-container {
     padding: 36px 20px 28px;
@@ -47,7 +48,7 @@
   }
 }
 
-/* Mobile */
+/* --- Responsive: Mobile --- */
 @media (max-width: 480px) {
   .header-container {
     padding: 28px 16px 24px;

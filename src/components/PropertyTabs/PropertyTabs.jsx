@@ -1,33 +1,37 @@
 import React from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import 'react-tabs/style/react-tabs.css'; 
-import './PropertyTabs.css'; 
+import 'react-tabs/style/react-tabs.css'; // Default library styles
+import './PropertyTabs.css';
 
 const PropertyTabs = ({ property }) => {
+
+    //Google Maps Embed URL based on the property location
+    const googleMapsUrl = `https://maps.google.com/maps?q=${encodeURIComponent(property.location)}&output=embed`;
+
     return (
         <div className="tabs-container">
             <Tabs>
 
-                {/* The Top Navigation Bar */}
+                {/* --- Tab Navigation Bar --- */}
                 <TabList className="custom-tab-list">
                     <Tab>Description</Tab>
                     <Tab>Floor Plan</Tab>
                     <Tab>Map</Tab>
                 </TabList>
 
+                {/* --- Tab 1: Description & Key Details --- */}
                 <TabPanel>
                     <div className="tab-content">
 
-                        {/* Description Text */}
+                        {/* Main Description */}
                         <h3 className="section-title">Property Description</h3>
                         <p className="desc-text">
                             {property.description}
                         </p>
 
-                        {/* The Divider Line */}
                         <hr className="divider" />
 
-                        {/* Key Details Grid */}
+                        {/* Key Stats Grid */}
                         <h3 className="section-title">Key Details</h3>
                         <div className="details-grid">
 
@@ -52,33 +56,36 @@ const PropertyTabs = ({ property }) => {
                             </div>
 
                         </div>
-
                     </div>
                 </TabPanel>
 
+                {/* --- Tab 2: Floor Plan Image --- */}
                 <TabPanel>
                     <div className="tab-content">
                         <img
                             className="property-floor-image"
                             src={property.picture}
-                            alt={property.type}
+                            alt={`${property.type} Floor Plan`}
+                            loading="lazy"
                         />
                     </div>
                 </TabPanel>
 
+                {/* --- Tab 3: Google Map Embed --- */}
                 <TabPanel>
                     <div className="tab-content">
                         <iframe
                             title="Property Location"
                             className="property-google-map"
+                            src={googleMapsUrl}
                             loading="lazy"
-                            src={`https://www.google.com/maps?q=${encodeURIComponent(property.location)}&output=embed`}
+                            allowFullScreen
                         ></iframe>
                     </div>
                 </TabPanel>
 
             </Tabs>
-        </div >
+        </div>
     );
 };
 

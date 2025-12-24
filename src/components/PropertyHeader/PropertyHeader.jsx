@@ -8,13 +8,13 @@ const PropertyHeader = ({ location }) => {
     <div className="property-header-section">
       <div className="property-header-content">
 
-        {/* Back navigation row */}
+        {/* Navigation: Link back to the main search page */}
         <Link to="/" className="back-nav-btn">
-            <ChevronLeft size={16} />
-            <span>Back to Search</span>
+          <ChevronLeft size={16} />
+          <span>Back to Search</span>
         </Link>
 
-        {/* Property Address Title */}
+        {/* Title: Display the property location/address */}
         <h1 className="property-title">{location}</h1>
 
       </div>
