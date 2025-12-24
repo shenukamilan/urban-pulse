@@ -52,7 +52,7 @@ const PropertyTabs = ({ property }) => {
 
                             <div className="detail-item">
                                 <span className="label">Date Added</span>
-                                <span className="value">September 14, 2022</span>
+                                <span className="value">{property.added.month} {property.added.day}, {property.added.year}</span>
                             </div>
 
                         </div>
