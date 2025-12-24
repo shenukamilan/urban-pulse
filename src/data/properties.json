@@ -38,7 +38,7 @@
             "bedrooms": 2,
             "price": 399995,
             "tenure": "Freehold",
-            "description": "Presented in excellent decorative order throughout is this two double bedroom, two bathroom, garden flat. The modern fitted kitchen is open plan to the living room which boasts solid wooden floors and includes integrated appliances including a dishwasher & a washing machine. This large open plan benefits from bi folding doors onto a secluded private courtyard garden. Both bedrooms are double sized, and the family bathroom boasts a matching three piece suite a shower attachment over the bath. There is also a separate wet room. There are walnut doors throughout and wiring for Sky TV/aerial points in the living room/kitchen and both bedrooms.<br>This apartment being only five years old, is still under a 10 year building guarantee...",
+            "description": "Presented in excellent decorative order throughout is this two double bedroom, two bathroom, garden flat. The modern fitted kitchen is open plan to the living room which boasts solid wooden floors and includes integrated appliances including a dishwasher & a washing machine. This large open plan benefits from bi folding doors onto a secluded private courtyard garden. Both bedrooms are double sized, and the family bathroom boasts a matching three piece suite a shower attachment over the bath. There is also a separate wet room. There are walnut doors throughout and wiring for Sky TV/aerial points in the living room/kitchen and both bedrooms.This apartment being only five years old, is still under a 10 year building guarantee...",
             "location": "Crofton Road Orpington BR6",
             "picture": "/Images/property2/0.jpeg",
             "url": "properties/prop2.html",
@@ -57,6 +57,141 @@
                 "/Images/property2/7.jpeg",
                 "/Images/property2/8.jpeg",
                 "/Images/property2/9.jpeg"
+            ]
+        },
+        {
+            "id": "prop3",
+            "type": "House",
+            "bedrooms": 6,
+            "price": 65000000,
+            "tenure": "Freehold",
+            "description": "In the heart of Knightsbridge, Fonteyn House is a rare London home that blends remarkable history with contemporary design. Built in 1928 and once known as Amberwood House, it was home to Dame Margot Fonteyn. Behind its retained façade of French windows, ornamental balconies and Portland stone, the house now spans over 15,000 sq ft of newly reimagined space across six floors. The lower level is a private spa finished in travertine and filled with daylight, featuring a 12-metre pool with waterfalls, a glass-walled gym, sauna, and steam room. The first floor is devoted to the principal suite, once Fonteyn’s own, with twin dressing rooms, a marble bathroom and Juliet balconies overlooking the garden.",
+            "location": "Thurloe Place, Knightsbridge SW7",
+            "picture": "/Images/property3/0.jpeg",
+            "url": "",
+            "added": {
+                "month": "March",
+                "day": 10,
+                "year": 2025
+            },
+            "images": [
+                "/Images/property3/1.jpeg",
+                "/Images/property3/2.jpeg",
+                "/Images/property3/3.jpeg",
+                "/Images/property3/4.jpeg",
+                "/Images/property3/5.jpeg",
+                "/Images/property3/6.jpeg",
+                "/Images/property3/7.jpeg",
+                "/Images/property3/8.jpeg",
+                "/Images/property3/9.jpeg",
+                "/Images/property3/10.jpeg",
+                "/Images/property3/11.jpeg",
+                "/Images/property3/12.jpeg"
+            ]
+        },
+        {
+            "id": "prop4",
+            "type": "House",
+            "bedrooms": 5,
+            "price": 3750000,
+            "tenure": "Freehold",
+            "description": "A magnificent five-bedroom double-fronted detached Victorian villa, situated on one of St Margarets’ most desirable tree-lined roads. This substantial family home offers over 4,000 sq ft of accommodation arranged over four floors. The raised ground floor features a grand entrance hall leading to two elegant reception rooms with high ceilings, original fireplaces, and bay windows. The lower ground floor houses a vast open-plan kitchen/dining/family room with bi-fold doors opening onto a 100ft landscaped rear garden. The upper floors comprise a principal suite with dressing room and en-suite, five further double bedrooms, and three family bathrooms. The property also benefits from off-street parking for two cars.",
+            "location": "St. Peters Road, Twickenham TW1",
+            "picture": "/Images/property4/0.jpeg",
+            "url": "",
+            "added": {
+                "month": "April",
+                "day": 22,
+                "year": 2024
+            },
+            "images": [
+                "/Images/property4/1.jpeg",
+                "/Images/property4/2.jpeg",
+                "/Images/property4/3.jpeg",
+                "/Images/property4/4.jpeg",
+                "/Images/property4/5.jpeg",
+                "/Images/property4/6.jpeg",
+                "/Images/property4/7.jpeg",
+                "/Images/property4/8.jpeg",
+                "/Images/property4/9.jpeg"
+            ]
+        },
+        {
+            "id": "prop5",
+            "type": "Flat",
+            "bedrooms": 1,
+            "price": 350000,
+            "tenure": "Share of Freehold",
+            "description": "An authentic 1,200 sq ft loft apartment in an iconic warehouse development off City Road. This first-floor property blends original character with modern luxury, featuring a stunning 37ft reception room with exposed brick walls, Crittall-style windows, and a sleek open-plan kitchen with polished concrete worktops.There are two generous double bedrooms with built-in storage, including an en-suite to the principal bedroom. Unusually for this location, the property includes secure underground parking and a large basement storage cage. Offered chain free, it is perfectly located for the City, Shoreditch, and Old Street station.",
+            "location": "Dingley Place, Old Street EC1",
+            "picture": "/Images/property5/0.jpeg",
+            "url": "",
+            "added": {
+                "month": "August",
+                "day": 19,
+                "year": 2024
+            },
+            "images": [
+                "/Images/property5/1.jpeg",
+                "/Images/property5/2.jpeg",
+                "/Images/property5/3.jpeg",
+                "/Images/property5/4.jpeg",
+                "/Images/property5/5.jpeg",
+                "/Images/property5/6.jpeg",
+                "/Images/property5/7.jpeg",
+                "/Images/property5/8.jpeg",
+                "/Images/property5/9.jpeg"
+            ]
+        },
+        {
+            "id": "prop6",
+            "type": "Flat",
+            "bedrooms": 4,
+            "price": 22500000,
+            "tenure": "Leasehold",
+            "description": "A fantastic four-bedroom lateral apartment on the seventh floor of the prestigious Clarges Development, offering uncompromised views over Green Park. This ultra-prime residence benefits from a 24-hour concierge, secure underground parking, and a private wellness spa featuring a 25-metre swimming pool, gym, sauna, and treatment rooms. The apartment features a spacious reception room with floor-to-ceiling windows, a state-of-the-art kitchen, and a private cinema room. All four bedrooms are en-suite, with the principal suite offering a walk-in dressing room and panoramic park views.",
+            "location": "Ashburton Place, Mayfair W1J",
+            "picture": "/Images/property6/0.jpeg",
+            "url": "",
+            "added": {
+                "month": "November",
+                "day": 5,
+                "year": 2025
+            },
+            "images": [
+                "/Images/property6/1.jpeg",
+                "/Images/property6/2.jpeg",
+                "/Images/property6/3.jpeg",
+                "/Images/property6/4.jpeg",
+                "/Images/property6/5.jpeg",
+                "/Images/property6/6.jpeg",
+                "/Images/property6/7.jpeg"
+            ]
+        },
+        {
+            "id": "prop7",
+            "type": "House",
+            "bedrooms": 12,
+            "price": 13500000,
+            "tenure": "Freehold Block",
+            "description": "A rare freehold investment opportunity in the heart of Bayswater. This magnificent white stucco-fronted building comprises five self-contained luxury apartments arranged over six floors (served by a passenger lift). The building consists of two 3-bedroom duplexes and three 2-bedroom lateral apartments, all finished to an exacting standard with underfloor heating, Miele appliances, and Sonos AV systems. The penthouse benefits from direct lift access and a private roof terrace with panoramic views. Fully let and generating a significant yield.",
+            "location": "Westbourne Gardens, Bayswater W2",
+            "picture": "/Images/property7/0.jpeg",
+            "url": "properties/prop7.html",
+            "added": {
+                "month": "February",
+                "day": 28,
+                "year": 2025
+            },
+            "images": [
+                "/Images/property7/1.jpeg",
+                "/Images/property7/2.jpeg",
+                "/Images/property7/3.jpeg",
+                "/Images/property7/4.jpeg",
+                "/Images/property7/5.jpeg",
+                "/Images/property7/6.jpeg",
+                "/Images/property7/7.jpeg",
+                "/Images/property7/8.jpeg"
             ]
         }
     ]
