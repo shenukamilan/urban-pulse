@@ -1,23 +1,25 @@
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import propertiesData from "../../data/properties.json";
-
-// Component Imports
 import Header from '../../components/Header/header';
 import PropertyHeader from '../../components/PropertyHeader/PropertyHeader';
 import PropertyInfoBar from '../../components/PropertyInfoBar/PropertyInfoBar';
 import ImageGallery from '../../components/PropertyGallery/PropertyGallery';
 import PropertyTabs from '../../components/PropertyTabs/PropertyTabs';
+import { PropertiesContext } from '../../context/PropertiesContext';
+
 
 import './PropertyPage.css';
 
 const PropertyPage = () => {
 
+  // Access global state for properties data
+  const { properties } = useContext(PropertiesContext);
+
   // Get the 'id' parameter from the URL 
   const { id } = useParams();
 
   // Search the JSON data to find the matching property object
-  const currentProperty = propertiesData.properties.find((p) => String(p.id) === id);
+  const currentProperty = properties.find((p) => String(p.id) === id);
 
   // UX Improvement: Scroll to top whenever the property ID changes
   useEffect(() => {

@@ -2,17 +2,20 @@ import React, { useContext } from 'react';
 import { Trash2 } from 'lucide-react';
 import FavouriteItem from '../FavouriteItem/FavouriteItem';
 import './FavouritesSidebar.css';
-import propertiesData from "../../data/properties.json";
 import { FavoritesContext } from '../../context/FavoritesContext';
+import { PropertiesContext } from '../../context/PropertiesContext';
 
 const FavouritesSidebar = () => {
+
+  // Access global state for properties data
+  const { properties } = useContext(PropertiesContext);
 
   // Access global state for favorites list and clear function
   const { favorites, clearFavorites } = useContext(FavoritesContext);
 
   // Map stored IDs back to full property objects.
   const savedProperties = favorites
-    .map((favId) => propertiesData.properties.find((p) => String(p.id) === favId))
+    .map((favId) => properties.find((p) => String(p.id) === favId))
     .filter((item) => item !== undefined); // Remove undefined items if an ID is invalid
 
   return (

@@ -1,12 +1,16 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import './SearchPage.css';
 import SearchBox from '../../components/SearchBox/SearchBox';
 import PropertyCard from '../../components/PropertyCard/PropertyCard';
-import propertiesData from "../../data/properties.json";
 import FavouritesSidebar from '../../components/FavouritesSidebar/FavouritesSidebar';
 import Header from '../../components/Header/header';
+import { PropertiesContext } from '../../context/PropertiesContext';
 
 const SearchPage = () => {
+
+    // Access global state for properties data
+    const { properties } = useContext(PropertiesContext);
+
     // State to hold the current values of the form inputs
     const [filters, setfilters] = useState({
         type: null,
@@ -40,7 +44,7 @@ const SearchPage = () => {
     };
 
     // Filtering Logic based on 'appliedFilters'
-    const filteredProperties = propertiesData.properties.filter((property) => {
+    const filteredProperties = properties.filter((property) => {
         const { type, minPrice, maxPrice, minBedrooms, maxBedrooms, startDate, postcode } = appliedFilters;
 
         // Property Type (House, Flat, etc.)
@@ -65,6 +69,7 @@ const SearchPage = () => {
 
         return true;
     });
+
 
     return (
         <>
