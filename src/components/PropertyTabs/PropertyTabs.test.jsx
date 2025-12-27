@@ -2,7 +2,7 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import { describe, test, expect } from 'vitest';
 import PropertyTabs from './PropertyTabs';
 
-// 1. Create Mock Data that matches your component structure exactly
+// Mock Data 
 const mockProperty = {
     id: '1',
     description: 'A beautiful family home with a large garden.',
@@ -16,9 +16,9 @@ const mockProperty = {
 
 describe('PropertyTabs Component', () => {
 
-    test('1. renders the Description text by default', () => {
+    test('1. renders the Description text', () => {
         render(<PropertyTabs property={mockProperty} />);
-
+        
         // Check if the main description is visible immediately
         expect(screen.getByText('A beautiful family home with a large garden.')).toBeInTheDocument();
     });
