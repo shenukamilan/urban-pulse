@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import { Trash2 } from 'lucide-react';
 import FavouriteItem from '../FavouriteItem/FavouriteItem';
 import './FavouritesSidebar.css';
@@ -11,15 +11,51 @@ const FavouritesSidebar = () => {
   const { properties } = useContext(PropertiesContext);
 
   // Access global state for favorites list and clear function
-  const { favorites, clearFavorites } = useContext(FavoritesContext);
+  const { favorites, clearFavorites, addFavorite } = useContext(FavoritesContext);
+
+  // State to track drag hover status for visual feedback
+  const [isDragOver, setIsDragOver] = useState(false);
 
   // Map stored IDs back to full property objects.
   const savedProperties = favorites
     .map((favId) => properties.find((p) => String(p.id) === favId))
     .filter((item) => item !== undefined); // Remove undefined items if an ID is invalid
 
+  // --- DRAG & DROP HANDLERS ---
+
+  // Fires once when dragged item enters the drop zone
+  const handleDragEnter = (e) => {
+    e.preventDefault();
+    setIsDragOver(true); // Turn on highlight
+  };
+
+  // Fires repeatedly while item is over drop zone (Required to allow dropping)
+  const handleDragOver = (e) => {
+    e.preventDefault();
+  };
+
+  // Fires once when dragged item leaves the drop zone
+  const handleDragLeave = () => {
+    setIsDragOver(false); 
+  };
+
+  // Fires when item is dropped
+  const handleDrop = (e) => {
+    e.preventDefault();
+    setIsDragOver(false); 
+
+    const propertyId = e.dataTransfer.getData("propertyId");
+    if (propertyId) {
+      addFavorite(propertyId);
+    }
+  };
   return (
-    <div className="fav-sidebar-card">
+    <div
+      className={`fav-sidebar-card ${isDragOver ? 'drag-active' : ''}`}
+      onDragEnter={handleDragEnter}
+      onDragOver={handleDragOver}
+      onDragLeave={handleDragLeave}
+      onDrop={handleDrop}>
 
       {/* Header section with count and clear button */}
       <div className="fav-header">

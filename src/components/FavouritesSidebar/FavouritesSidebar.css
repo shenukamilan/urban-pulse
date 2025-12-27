@@ -8,6 +8,12 @@
   width: 100%;
   position: sticky;
   top: 20px;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.fav-sidebar-card.drag-active {
+  border-color: var(--primary-color);
 }
 
 /* --- Header Section --- */

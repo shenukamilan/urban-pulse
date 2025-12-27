@@ -5,11 +5,14 @@ import PropertyCard from '../../components/PropertyCard/PropertyCard';
 import FavouritesSidebar from '../../components/FavouritesSidebar/FavouritesSidebar';
 import Header from '../../components/Header/header';
 import { PropertiesContext } from '../../context/PropertiesContext';
+import { FavoritesContext } from '../../context/FavoritesContext';
 
 const SearchPage = () => {
 
     // Access global state for properties data
     const { properties } = useContext(PropertiesContext);
+
+    const { removeFavorite } = useContext(FavoritesContext);
 
     // State to hold the current values of the form inputs
     const [filters, setfilters] = useState({
@@ -22,8 +25,8 @@ const SearchPage = () => {
         startDate: null
     });
 
-    // State to hold the filters that are actually applied to the list
-    // This separation ensures the list doesn't update until the user clicks "Search"
+    // State to hold the filters that are  applied to the list
+    // Ensures the list doesn't update until the user clicks "Search"
     const [appliedFilters, setAppliedFilters] = useState(filters);
 
     // Apply the current form values to the search results
@@ -97,13 +100,29 @@ const SearchPage = () => {
         return true;
     });
 
+    // Allow dropping by preventing default behavior
+    const handleDragOver = (e) => {
+        e.preventDefault();
+    };
+
+    // Handle drop to remove the item from favorites
+    const handleDrop = (e) => {
+        e.preventDefault();
+        const removeId = e.dataTransfer.getData("removeId");
+        if (removeId) {
+            removeFavorite(removeId);
+        }
+    };
+
     return (
         <>
             <Header />
             <div className="search-page-layout">
-
                 {/* --- Left Column: Search Form & Results --- */}
-                <div className="search-main-column">
+                <div
+                    className="search-main-column"
+                    onDragOver={handleDragOver}
+                    onDrop={handleDrop}>
                     <SearchBox
                         filters={filters}
                         setfilters={setfilters}

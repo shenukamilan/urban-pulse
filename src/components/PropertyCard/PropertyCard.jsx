@@ -24,53 +24,61 @@ const PropertyCard = ({ property }) => {
     }
   };
 
+  // Set the property ID on drag start to enable adding to favorites
+  const handleDragStart = (e) => {
+    e.dataTransfer.setData("propertyId", property.id);
+  };
+
   return (
-    <Link to={`/property/${property.id}`} className="prop-card-link">
-      <div className="prop-card">
+    <div className="prop-card-container" draggable="true" onDragStart={handleDragStart} >
+      <Link to={`/property/${property.id}`} className="prop-card-link">
+        <div className="prop-card">
 
-        {/* Image Section with Overlay Button */}
-        <div className="prop-image-wrapper">
-          <img
-            src={property.images[0]}
-            alt={property.type}
-            className="prop-image"
-            loading="lazy"
-          />
-
-          <button
-            className="heart-btn"
-            onClick={handleFavoriteClick}
-            aria-label={isLiked ? "Remove from favorites" : "Add to favorites"}
-          >
-            <Heart
-              size={20}
-              fill={isLiked ? "#490080" : "transparent"}
-              color={isLiked ? "#490080" : "currentColor"}
+          {/* Image Section with Overlay Button */}
+          <div className="prop-image-wrapper">
+            <img
+              src={property.images[0]}
+              alt={property.type}
+              className="prop-image"
+              loading="lazy"
             />
-          </button>
-        </div>
 
-        {/* Content Section */}
-        <div className="prop-content">
-          <h2 className="prop-price">£{property.price.toLocaleString()}</h2>
-
-          <div className="prop-specs">
-            <BedDouble size={18} className="prop-icon" />
-            <span>{property.bedrooms} bed {property.type}</span>
+            <button
+              className="heart-btn"
+              onClick={handleFavoriteClick}
+              aria-label={isLiked ? "Remove from favorites" : "Add to favorites"}
+            >
+              <Heart
+                size={20}
+                fill={isLiked ? "#490080" : "transparent"}
+                color={isLiked ? "#490080" : "currentColor"}
+              />
+            </button>
           </div>
 
-          <div className="prop-location">
-            <MapPin size={16} className="prop-icon" />
-            <span>{property.location}</span>
+          {/* Content Section */}
+          <div className="prop-content">
+            <h2 className="prop-price">£{property.price.toLocaleString()}</h2>
+
+            <div className="prop-specs">
+              <BedDouble size={18} className="prop-icon" />
+              <span>{property.bedrooms} bed {property.type}</span>
+            </div>
+
+            <div className="prop-location">
+              <MapPin size={16} className="prop-icon" />
+              <span>{property.location}</span>
+            </div>
+
+            <p className="prop-description">
+              {property.description.substring(0, 232)}...
+            </p>
           </div>
 
-          <p className="prop-description">
-            {property.description.substring(0, 232)}...
-          </p>
         </div>
+      </Link>
+    </div>
 
-      </div>
-    </Link>
   );
 };
 
