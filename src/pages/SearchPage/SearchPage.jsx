@@ -35,41 +35,67 @@ const SearchPage = () => {
     // Reset both the form inputs and the applied search results
     const handleReset = () => {
         const resetState = {
-            type: null, minPrice: '', maxPrice: '',
-            minBedrooms: '', maxBedrooms: '',
-            postcode: '', startDate: null
+            type: null,
+            minPrice: null,
+            maxPrice: null,
+            minBedrooms: null,
+            maxBedrooms: null,
+            postcode: '',
+            startDate: null
         };
         setfilters(resetState);
         setAppliedFilters(resetState);
+    };
+
+    const getValue = (input) => {
+        // Check if the input is empty (null or undefined)
+        if (!input) {
+            return null;
+        }
+
+        // Check if the input is an object that has a "value" property for react select
+        if (input.value) {
+            return input.value;
+        }
+
+        // Check if it's just a regular string or number from text inputs
+        else {
+            return input;
+        }
     };
 
     // Filtering Logic based on 'appliedFilters'
     const filteredProperties = properties.filter((property) => {
         const { type, minPrice, maxPrice, minBedrooms, maxBedrooms, startDate, postcode } = appliedFilters;
 
-        // Property Type (House, Flat, etc.)
-        if (type && type.value !== "any" && property.type !== type.value) return false;
+        // 1. Property Type
+        const typeVal = getValue(type);
+        if (typeVal && typeVal !== "any" && property.type !== typeVal) return false;
 
-        // Price Range
-        if (minPrice && property.price < Number(minPrice)) return false;
-        if (maxPrice && property.price > Number(maxPrice)) return false;
+        // 2. Price Range 
+        const minPriceVal = getValue(minPrice);
+        const maxPriceVal = getValue(maxPrice);
+        if (minPriceVal && property.price < Number(minPriceVal)) return false;
+        if (maxPriceVal && property.price > Number(maxPriceVal)) return false;
 
-        // Bedroom Count
-        if (minBedrooms && property.bedrooms < Number(minBedrooms)) return false;
-        if (maxBedrooms && property.bedrooms > Number(maxBedrooms)) return false;
+        // 3. Bedroom Count
+        const minBedVal = getValue(minBedrooms);
+        const maxBedVal = getValue(maxBedrooms);
+        if (minBedVal && property.bedrooms < Number(minBedVal)) return false;
+        if (maxBedVal && property.bedrooms > Number(maxBedVal)) return false;
 
-        // Date Added 
+        // 4. Date Added
         if (startDate) {
+            if (!property.added) return false; // Safety check for missing dates
             const addedDate = new Date(property.added.year, new Date(`${property.added.month} 1`).getMonth(), property.added.day);
             if (addedDate < startDate) return false;
         }
 
-        // Postcode
+        // 5. Postcode
         if (postcode && !property.location.toUpperCase().includes(postcode.toUpperCase())) return false;
 
         return true;
     });
-
 
     return (
         <>

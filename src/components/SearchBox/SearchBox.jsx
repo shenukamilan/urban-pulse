@@ -7,6 +7,39 @@ import './SearchBox.css';
 
 
 const SearchBox = ({ filters, setfilters, onSearch, onReset }) => {
+
+    // Options for Property Dropdown
+    const propertyOptions = [
+        { value: 'any', label: 'Any' },
+        { value: 'House', label: 'House' },
+        { value: 'Flat', label: 'Flat' }
+    ];
+
+    // Options for Bedrooms Dropdown
+    const bedroomOptions = [
+        { value: '1', label: '1' },
+        { value: '2', label: '2' },
+        { value: '3', label: '3' },
+        { value: '4', label: '4' },
+        { value: '5', label: '5' },
+        { value: '6', label: '6' },
+    ];
+
+    // Options for Price Dropdown
+    const priceOptions = [
+        { value: '100000', label: '£100,000' },
+        { value: '200000', label: '£200,000' },
+        { value: '300000', label: '£300,000' },
+        { value: '400000', label: '£400,000' },
+        { value: '500000', label: '£500,000' },
+        { value: '750000', label: '£750,000' },
+        { value: '1000000', label: '£1,000,000' },
+        { value: '2000000', label: '£2,000,000' },
+        { value: '5000000', label: '£5,000,000' },
+        { value: '10000000', label: '£10,000,000' }, 
+        { value: '20000000', label: '£20,000,000' }, 
+        { value: '50000000', label: '£50,000,000' }
+    ];
     return (
         <div className="search-card">
             <h2 className="search-title">Search Properties</h2>
@@ -19,11 +52,7 @@ const SearchBox = ({ filters, setfilters, onSearch, onReset }) => {
                     <label>Property Type</label>
                     <Select
                         placeholder="Any"
-                        options={[
-                            { value: 'any', label: 'Any' },
-                            { value: 'House', label: 'House' },
-                            { value: 'Flat', label: 'Flat' }
-                        ]}
+                        options={propertyOptions}
                         value={filters.type}
                         onChange={(value) => setfilters({ ...filters, type: value })}
                     />
@@ -41,25 +70,21 @@ const SearchBox = ({ filters, setfilters, onSearch, onReset }) => {
 
                 <div className="field-group">
                     <label>Min Price (£)</label>
-                    <input
-                        type="number"
-                        placeholder="e.g. 200000"
+                    <Select
+                        placeholder="No min"
+                        options={priceOptions}
                         value={filters.minPrice}
-                        step="10000"
-                        min="0"
-                        onChange={(e) => setfilters({ ...filters, minPrice: e.target.value })}
+                        onChange={(value) => setfilters({ ...filters, minPrice: value })}
                     />
                 </div>
 
                 <div className="field-group">
                     <label>Max Price (£)</label>
-                    <input
-                        type="number"
-                        placeholder="e.g. 800000"
+                    <Select
+                        placeholder="No max"
+                        options={priceOptions}
                         value={filters.maxPrice}
-                        step="10000"
-                        min="0"
-                        onChange={(e) => setfilters({ ...filters, maxPrice: e.target.value })}
+                        onChange={(value) => setfilters({ ...filters, maxPrice: value })}
                     />
                 </div>
 
@@ -67,23 +92,21 @@ const SearchBox = ({ filters, setfilters, onSearch, onReset }) => {
 
                 <div className="field-group">
                     <label>Min Bedrooms</label>
-                    <input
-                        type="number"
-                        placeholder="e.g. 2"
+                    <Select
+                        placeholder="No min"
+                        options={bedroomOptions}
                         value={filters.minBedrooms}
-                        min="1"
-                        onChange={(e) => setfilters({ ...filters, minBedrooms: e.target.value })}
+                        onChange={(value) => setfilters({ ...filters, minBedrooms: value })}
                     />
                 </div>
 
                 <div className="field-group">
                     <label>Max Bedrooms</label>
-                    <input
-                        type="number"
-                        placeholder="e.g. 4"
+                    <Select
+                        placeholder="No max"
+                        options={bedroomOptions}
                         value={filters.maxBedrooms}
-                        min="1"
-                        onChange={(e) => setfilters({ ...filters, maxBedrooms: e.target.value })}
+                        onChange={(value) => setfilters({ ...filters, maxBedrooms: value })}
                     />
                 </div>
 
