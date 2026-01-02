@@ -12,15 +12,16 @@ const SearchPage = () => {
     // Access global state for properties data
     const { properties } = useContext(PropertiesContext);
 
+    // Access global state for removeFavorite  
     const { removeFavorite } = useContext(FavoritesContext);
 
     // State to hold the current values of the form inputs
     const [filters, setfilters] = useState({
         type: null,
-        minPrice: '',
-        maxPrice: '',
-        minBedrooms: '',
-        maxBedrooms: '',
+        minPrice: null,
+        maxPrice: null,
+        minBedrooms: null,
+        maxBedrooms: null,
         postcode: '',
         startDate: null
     });
@@ -67,13 +68,13 @@ const SearchPage = () => {
         }
     };
 
-    // Filtering Logic based on 'appliedFilters'
+    // Filtering Logic based on 'Applied Filters'
     const filteredProperties = properties.filter((property) => {
         const { type, minPrice, maxPrice, minBedrooms, maxBedrooms, startDate, postcode } = appliedFilters;
 
         // 1. Property Type
         const typeVal = getValue(type);
-        if (typeVal && typeVal !== "any" && property.type !== typeVal) return false;
+        if (typeVal && typeVal !== "Any" && property.type !== typeVal) return false;
 
         // 2. Price Range 
         const minPriceVal = getValue(minPrice);

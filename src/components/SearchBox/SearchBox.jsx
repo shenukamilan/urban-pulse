@@ -10,7 +10,7 @@ const SearchBox = ({ filters, setfilters, onSearch, onReset }) => {
 
     // Options for Property Dropdown
     const propertyOptions = [
-        { value: 'any', label: 'Any' },
+        { value: 'Any', label: 'Any' },
         { value: 'House', label: 'House' },
         { value: 'Flat', label: 'Flat' }
     ];
@@ -32,13 +32,11 @@ const SearchBox = ({ filters, setfilters, onSearch, onReset }) => {
         { value: '300000', label: '£300,000' },
         { value: '400000', label: '£400,000' },
         { value: '500000', label: '£500,000' },
-        { value: '750000', label: '£750,000' },
-        { value: '1000000', label: '£1,000,000' },
-        { value: '2000000', label: '£2,000,000' },
-        { value: '5000000', label: '£5,000,000' },
-        { value: '10000000', label: '£10,000,000' }, 
-        { value: '20000000', label: '£20,000,000' }, 
-        { value: '50000000', label: '£50,000,000' }
+        { value: '600000', label: '£600,000' },
+        { value: '700000', label: '£700,000' },
+        { value: '800000', label: '£800,000' },
+        { value: '900000', label: '£900,000' },
+        { value: '1000000', label: '£1,000,000' }
     ];
     return (
         <div className="search-card">

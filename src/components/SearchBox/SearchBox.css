@@ -44,16 +44,6 @@
   box-sizing: border-box;
 }
 
-/* --- React Datepicker Overrides --- */
-/* Fixes issue where the datepicker input is too short */
-.react-datepicker-wrapper {
-  width: 100%;
-}
-
-.react-datepicker__input-container input {
-  width: 100%;
-}
-
 /* --- Action Buttons --- */
 .search-actions {
   grid-column: span 4;
@@ -64,7 +54,6 @@
 
 .btn-main-search {
   flex: 3;
-  /* Search button takes up 75% of the row */
   background-color: var(--primary-color);
   color: white;
   border: none;
@@ -94,7 +83,6 @@
 
 .btn-reset {
   flex: 1;
-  /* Reset button takes up 25% */
   padding: 0 25px;
   background: #f8f8f8;
   border: 1px solid #eee;

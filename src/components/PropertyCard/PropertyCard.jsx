@@ -46,7 +46,6 @@ const PropertyCard = ({ property }) => {
             <button
               className="heart-btn"
               onClick={handleFavoriteClick}
-              aria-label={isLiked ? "Remove from favorites" : "Add to favorites"}
             >
               <Heart
                 size={20}

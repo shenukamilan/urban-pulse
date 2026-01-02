@@ -10,7 +10,7 @@ const FavouritesSidebar = () => {
   // Access global state for properties data
   const { properties } = useContext(PropertiesContext);
 
-  // Access global state for favorites list and clear function
+  // Access global state for favorites list and functions
   const { favorites, clearFavorites, addFavorite } = useContext(FavoritesContext);
 
   // State to track drag hover status for visual feedback
@@ -19,36 +19,36 @@ const FavouritesSidebar = () => {
   // Map stored IDs back to full property objects.
   const savedProperties = favorites
     .map((favId) => properties.find((p) => String(p.id) === favId))
-    .filter((item) => item !== undefined); // Remove undefined items if an ID is invalid
 
   // --- DRAG & DROP HANDLERS ---
 
-  // Fires once when dragged item enters the drop zone
+  // Trigger visual feedback when a draggable item enters the sidebar
   const handleDragEnter = (e) => {
     e.preventDefault();
-    setIsDragOver(true); // Turn on highlight
+    setIsDragOver(true);
   };
 
-  // Fires repeatedly while item is over drop zone (Required to allow dropping)
+  // Necessary override to allow the drop action to complete
   const handleDragOver = (e) => {
     e.preventDefault();
   };
 
-  // Fires once when dragged item leaves the drop zone
+  // Reset the visual state if the user drags the item away
   const handleDragLeave = () => {
-    setIsDragOver(false); 
+    setIsDragOver(false);
   };
 
-  // Fires when item is dropped
+  // Process the drop: retrieve the data and update the favorites list
   const handleDrop = (e) => {
     e.preventDefault();
-    setIsDragOver(false); 
+    setIsDragOver(false); // Clean up the highlight
 
     const propertyId = e.dataTransfer.getData("propertyId");
     if (propertyId) {
       addFavorite(propertyId);
     }
   };
+  
   return (
     <div
       className={`fav-sidebar-card ${isDragOver ? 'drag-active' : ''}`}

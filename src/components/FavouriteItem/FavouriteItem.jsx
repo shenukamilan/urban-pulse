@@ -9,7 +9,7 @@ const FavouriteItem = ({ item }) => {
   // Access global state to handle removal of favorites
   const { removeFavorite } = useContext(FavoritesContext);
 
-  // Set the item ID when dragging starts to enable removal
+  // Store the item ID to identify the dragged element
   const handleDragStart = (e) => {
     e.dataTransfer.setData("removeId", item.id);
   };
