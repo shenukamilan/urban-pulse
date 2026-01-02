@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import { describe, test, expect } from 'vitest';
-import PropertyTabs from './PropertyTabs';
+import PropertyTabs from '../components/PropertyTabs/PropertyTabs';
 
 // Mock Data 
 const mockProperty = {
