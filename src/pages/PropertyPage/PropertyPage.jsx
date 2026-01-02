@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import Header from '../../components/Header/header';
 import PropertyHeader from '../../components/PropertyHeader/PropertyHeader';
 import PropertyInfoBar from '../../components/PropertyInfoBar/PropertyInfoBar';
-import ImageGallery from '../../components/PropertyGallery/PropertyGallery';
+import PropertyGallery from '../../components/PropertyGallery/PropertyGallery';
 import PropertyTabs from '../../components/PropertyTabs/PropertyTabs';
 import { PropertiesContext } from '../../context/PropertiesContext';
 
@@ -21,12 +21,12 @@ const PropertyPage = () => {
   // Search the JSON data to find the matching property object
   const currentProperty = properties.find((p) => String(p.id) === id);
 
-  // UX Improvement: Scroll to top whenever the property ID changes
+  // Scroll to top whenever the property ID changes
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [id]);
 
-  // Handle invalid IDs (Safety Check)
+  // Handle invalid IDs 
   if (!currentProperty) {
     return (
       <>
@@ -42,16 +42,15 @@ const PropertyPage = () => {
   // Render the full property layout
   return (
     <>
-      {/* Top Header with Back Button and Address */}
+      {/* Property Page Header */}
       <PropertyHeader
         location={currentProperty.location}
-        onBack={() => console.log("Go back")}
       />
 
       <div className="property-page-layout">
 
         {/* Slideshow of images */}
-        <ImageGallery
+        <PropertyGallery
           images={currentProperty.images}
         />
 

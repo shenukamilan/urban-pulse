@@ -79,7 +79,6 @@ const PropertyTabs = ({ property }) => {
                             className="property-google-map"
                             src={googleMapsUrl}
                             loading="lazy"
-                            allowFullScreen
                         ></iframe>
                     </div>
                 </TabPanel>

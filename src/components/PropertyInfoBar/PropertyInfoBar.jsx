@@ -11,7 +11,7 @@ const PropertyInfoBar = ({ property }) => {
     // Check if this specific property is currently saved
     const isLiked = isFavorite(property.id);
 
-    //  Handles the favorite toggle.
+    //  Handles the favorite toggle
     const handleToggle = () => {
         if (isLiked) {
             removeFavorite(property.id);
@@ -43,7 +43,6 @@ const PropertyInfoBar = ({ property }) => {
                     // Dynamically add 'active' class if the item is favorite
                     className={`info-fav-btn ${isLiked ? 'active' : ''}`}
                     onClick={handleToggle}
-                    aria-pressed={isLiked}
                 >
                     <Heart
                         size={18}
