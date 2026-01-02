@@ -1,9 +1,24 @@
-import { createContext, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 
 const FavoritesContext = createContext();
 
+// Load initial state from Local Storage
+const getInitialState = () => {
+  try {
+    const favorites = localStorage.getItem("favorites");
+    return favorites ? JSON.parse(favorites) : [];
+  } catch (error) {
+    console.error("Error loading favorites:", error);
+    return [];
+  }
+}
+
 const FavoritesProvider = ({ children }) => {
-  const [favorites, setFavorites] = useState([]);
+  const [favorites, setFavorites] = useState(getInitialState);
+  // Sync favorites to Local Storage when state changes
+  useEffect(() => {
+    localStorage.setItem("favorites", JSON.stringify(favorites))
+  }, [favorites])
 
   // Add ID
   const addFavorite = (id) => {
@@ -31,13 +46,13 @@ const FavoritesProvider = ({ children }) => {
   const isFavorite = (id) => favorites.includes(String(id));
 
   return (
-    <FavoritesContext.Provider 
-      value={{ 
-        favorites, 
-        addFavorite, 
-        removeFavorite, 
-        clearFavorites, 
-        isFavorite 
+    <FavoritesContext.Provider
+      value={{
+        favorites,
+        addFavorite,
+        removeFavorite,
+        clearFavorites,
+        isFavorite
       }}
     >
       {children}

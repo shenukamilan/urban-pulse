@@ -19,6 +19,7 @@ const FavouritesSidebar = () => {
   // Map stored IDs back to full property objects.
   const savedProperties = favorites
     .map((favId) => properties.find((p) => String(p.id) === favId))
+    .filter(property => property !== undefined);
 
   // --- DRAG & DROP HANDLERS ---
 
@@ -48,7 +49,7 @@ const FavouritesSidebar = () => {
       addFavorite(propertyId);
     }
   };
-  
+
   return (
     <div
       className={`fav-sidebar-card ${isDragOver ? 'drag-active' : ''}`}
