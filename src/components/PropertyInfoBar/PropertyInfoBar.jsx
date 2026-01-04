@@ -11,7 +11,7 @@ const PropertyInfoBar = ({ property }) => {
     // Check if this specific property is currently saved
     const isLiked = isFavorite(property.id);
 
-    //  Handles the favorite toggle
+    // Handles the favorite toggle
     const handleToggle = () => {
         if (isLiked) {
             removeFavorite(property.id);
@@ -28,7 +28,7 @@ const PropertyInfoBar = ({ property }) => {
                 {/* Price */}
                 <h2 className="info-price">£{property.price.toLocaleString()}</h2>
 
-                {/* Property Metadata (Type, Bedrooms, Tenure) */}
+                {/* Property Metadata */}
                 <p className="info-meta">
                     {property.type} • {property.bedrooms} Bedrooms • {property.tenure}
                 </p>
@@ -46,7 +46,6 @@ const PropertyInfoBar = ({ property }) => {
                 >
                     <Heart
                         size={18}
-                        // Fill white if active, otherwise transparent (outline only)
                         fill={isLiked ? "white" : "none"}
                         className="info-heart-icon"
                     />

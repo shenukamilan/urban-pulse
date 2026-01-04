@@ -38,7 +38,7 @@ const FavouriteItem = ({ item }) => {
         <p className="fav-loc-text">{item.location.substring(0, 25)}</p>
       </div>
 
-      {/* Quick removal button */}
+      {/* Removal button */}
       <button className="fav-remove-btn" title="Remove from favourites" onClick={() => removeFavorite(item.id)}>
         <X size={14} />
       </button>

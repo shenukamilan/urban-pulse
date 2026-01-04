@@ -15,8 +15,7 @@ const PropertyCard = ({ property }) => {
   // Handles the heart button click.
   const handleFavoriteClick = (e) => {
     e.preventDefault();  // Stop browser from following the link
-    e.stopPropagation(); // Stop event from bubbling up to the Link component
-
+    e.stopPropagation(); 
     if (isLiked) {
       removeFavorite(property.id);
     } else {
@@ -34,7 +33,7 @@ const PropertyCard = ({ property }) => {
       <Link to={`/property/${property.id}`} className="prop-card-link">
         <div className="prop-card">
 
-          {/* Image Section with Overlay Button */}
+          {/* Image Section with button */}
           <div className="prop-image-wrapper">
             <img
               src={property.images[0]}

@@ -44,7 +44,7 @@ const SearchBox = ({ filters, setfilters, onSearch, onReset }) => {
 
             <form className="search-grid" onSubmit={onSearch}>
 
-                {/* --- Row 1: Type, Location, Price Range --- */}
+                {/* Row 1 Type, Location, Price Range */}
 
                 <div className="field-group">
                     <label>Property Type</label>
@@ -86,7 +86,7 @@ const SearchBox = ({ filters, setfilters, onSearch, onReset }) => {
                     />
                 </div>
 
-                {/* --- Row 2: Bedrooms & Date --- */}
+                {/* Row 2 Bedrooms & Date */}
 
                 <div className="field-group">
                     <label>Min Bedrooms</label>
@@ -117,7 +117,7 @@ const SearchBox = ({ filters, setfilters, onSearch, onReset }) => {
                     />
                 </div>
 
-                {/* --- Action Buttons --- */}
+                {/* Action Buttons */}
                 <div className="search-actions">
                     <button type="submit" className="btn-main-search">
                         <Search size={18} /> Search Properties

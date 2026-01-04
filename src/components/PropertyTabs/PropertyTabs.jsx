@@ -12,14 +12,14 @@ const PropertyTabs = ({ property }) => {
         <div className="tabs-container">
             <Tabs>
 
-                {/* --- Tab Navigation Bar --- */}
+                {/* Tab Navigation Bar */}
                 <TabList className="custom-tab-list">
                     <Tab>Description</Tab>
                     <Tab>Floor Plan</Tab>
                     <Tab>Map</Tab>
                 </TabList>
 
-                {/* --- Tab 1: Description & Key Details --- */}
+                {/* Tab 1 Description & Key Details */}
                 <TabPanel>
                     <div className="tab-content">
 
@@ -59,7 +59,7 @@ const PropertyTabs = ({ property }) => {
                     </div>
                 </TabPanel>
 
-                {/* --- Tab 2: Floor Plan Image --- */}
+                {/* Tab 2 Floor Plan Image */}
                 <TabPanel>
                     <div className="tab-content">
                         <img
@@ -71,7 +71,7 @@ const PropertyTabs = ({ property }) => {
                     </div>
                 </TabPanel>
 
-                {/* --- Tab 3: Google Map Embed --- */}
+                {/* Tab 3 Google Map Embed */}
                 <TabPanel>
                     <div className="tab-content">
                         <iframe

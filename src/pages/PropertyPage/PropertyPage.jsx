@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import Header from '../../components/Header/header';
+import Header from '../../components/Header/Header';
 import PropertyHeader from '../../components/PropertyHeader/PropertyHeader';
 import PropertyInfoBar from '../../components/PropertyInfoBar/PropertyInfoBar';
 import PropertyGallery from '../../components/PropertyGallery/PropertyGallery';
@@ -59,7 +59,7 @@ const PropertyPage = () => {
           property={currentProperty}
         />
 
-        {/* Tabbed content: Description, Floorplan, Map */}
+        {/* Tab content: Description, Floorplan, Map */}
         <PropertyTabs
           property={currentProperty}
         />

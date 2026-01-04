@@ -1,4 +1,4 @@
-/* --- Main Layout Container --- */
+/* Main Layout Container */
 .property-page-layout {
   display: flex;
   flex-direction: column;
@@ -9,7 +9,7 @@
   align-items: flex-start;
 }
 
-/* --- Error State (Not Found) --- */
+/* Error Page (Not Found) */
 .property-not-found {
   display: flex;
   flex-direction: column;

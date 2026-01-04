@@ -3,7 +3,7 @@ import './SearchPage.css';
 import SearchBox from '../../components/SearchBox/SearchBox';
 import PropertyCard from '../../components/PropertyCard/PropertyCard';
 import FavouritesSidebar from '../../components/FavouritesSidebar/FavouritesSidebar';
-import Header from '../../components/Header/header';
+import Header from '../../components/Header/Header';
 import { PropertiesContext } from '../../context/PropertiesContext';
 import { FavoritesContext } from '../../context/FavoritesContext';
 
@@ -101,12 +101,11 @@ const SearchPage = () => {
         return true;
     });
 
-    // Allow dropping by preventing default behavior
+    // Drag and Drop Handlers
     const handleDragOver = (e) => {
         e.preventDefault();
     };
 
-    // Handle drop to remove the item from favorites
     const handleDrop = (e) => {
         e.preventDefault();
         const removeId = e.dataTransfer.getData("removeId");
@@ -119,7 +118,7 @@ const SearchPage = () => {
         <>
             <Header />
             <div className="search-page-layout">
-                {/* --- Left Column: Search Form & Results --- */}
+                {/* Left Column Search Form & Results */}
                 <div
                     className="search-main-column"
                     onDragOver={handleDragOver}
@@ -146,7 +145,7 @@ const SearchPage = () => {
                     </div>
                 </div>
 
-                {/* --- Right Column: Favourites Sidebar --- */}
+                {/* Right Column: Favourites Sidebar */}
                 <aside className="favourites-sidebar">
                     <FavouritesSidebar />
                 </aside>

@@ -1,10 +1,10 @@
-/* --- Main Section Wrapper --- */
+/* Main Section Wrapper */
 .property-header-section {
   width: 100%;
   background-color: var(--primary-color);
 }
 
-/* --- Content Container --- */
+/* Content Container */
 .property-header-content {
   width: 100%;
   max-width: 1200px;
@@ -15,7 +15,7 @@
   gap: 20px;
 }
 
-/* --- Back Button Styling --- */
+/* Back Button Styling */
 .back-nav-btn {
   text-decoration: none;
   background: transparent;
@@ -37,7 +37,7 @@
   text-decoration: underline;
 }
 
-/* --- Title Styling --- */
+/* Title Styling */
 .property-title {
   font-size: 30px;
   font-weight: 700;
@@ -46,7 +46,7 @@
   line-height: 1.2;
 }
 
-/* --- Responsive: Tablet --- */
+/* Responsive: Tablet */
 @media (max-width: 768px) {
   .property-header-content {
     padding: 36px 20px 28px;
@@ -57,7 +57,7 @@
   }
 }
 
-/* --- Responsive: Mobile --- */
+/* Responsive: Mobile */
 @media (max-width: 480px) {
   .property-header-content {
     padding: 28px 16px 24px;

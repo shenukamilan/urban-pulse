@@ -1,4 +1,4 @@
-/* --- Main Container --- */
+/* Main Container */
 .info-bar-container {
   background-color: white;
   border: 1px solid #e5e5e5;
@@ -13,7 +13,7 @@
   width: 100%;
 }
 
-/* --- Left Side: Text Content --- */
+/* Left Side: Text Content */
 .info-left-content {
   display: flex;
   flex-direction: column;
@@ -41,7 +41,7 @@
   margin: 0;
 }
 
-/* --- Right Side: Favorite Button --- */
+/* Right Side: Favorite Button */
 /* Default State (Liked) */
 .info-fav-btn {
   background-color: var(--primary-color);
@@ -70,7 +70,7 @@
   fill: none;
 }
 
-/* --- Responsive (Mobile) --- */
+/* Responsive (Mobile) */
 @media (max-width: 768px) {
   .info-bar-container {
     flex-direction: column;

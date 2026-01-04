@@ -1,4 +1,4 @@
-/* --- Main Container --- */
+/* Main Container */
 .search-card {
   background: #ffffff;
   border: 1px solid #e7e7e7;
@@ -15,14 +15,14 @@
   color: #1a1a1a;
 }
 
-/* --- Grid Layout --- */
+/* Grid Layout */
 .search-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 15px 20px;
 }
 
-/* --- Input Fields --- */
+/* Input Fields */
 .field-group {
   display: flex;
   flex-direction: column;
@@ -44,7 +44,7 @@
   box-sizing: border-box;
 }
 
-/* --- Action Buttons --- */
+/* Action Buttons */
 .search-actions {
   grid-column: span 4;
   display: flex;
@@ -91,7 +91,7 @@
   transition: all 0.2s ease;
 }
 
-/* --- Responsive: Tablet (2 Columns) --- */
+/* Responsive: Tablet (2 Columns) */
 @media (max-width: 1024px) {
   .search-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -102,7 +102,7 @@
   }
 }
 
-/* --- Responsive: Mobile (1 Column) --- */
+/* Responsive: Mobile (1 Column) */
 @media (max-width: 600px) {
   .search-card {
     padding: 15px;

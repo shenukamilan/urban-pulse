@@ -1,4 +1,4 @@
-/* --- Main Footer Container --- */
+/* Main Footer Container */
 .footer {
   width: 100%;
   background-color: var(--primary-color);
@@ -6,7 +6,7 @@
   margin-top: auto;
 }
 
-/* --- Content Wrapper --- */
+/* Container */
 .footer-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -14,7 +14,7 @@
   text-align: center;
 }
 
-/* --- Text Styling --- */
+/* Text Styling */
 .footer-text {
   font-size: 14px;
   color: #cbcbcb;
@@ -22,7 +22,7 @@
   line-height: 1.6;
 }
 
-/* --- Responsive: Tablet --- */
+/* Responsive: Tablet */
 @media (max-width: 768px) {
   .footer-container {
     padding: 24px 20px;
@@ -33,7 +33,7 @@
   }
 }
 
-/* --- Responsive: Mobile --- */
+/* Responsive: Mobile */
 @media (max-width: 480px) {
   .footer-container {
     padding: 20px 16px;

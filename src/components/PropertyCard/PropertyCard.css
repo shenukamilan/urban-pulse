@@ -1,9 +1,9 @@
-/* --- Link Wrapper --- */
+/* Link Wrapper */
 .prop-card-link {
   text-decoration: none;
 }
 
-/* --- Main Card Container --- */
+/* Main Card Container */
 .prop-card {
   background: white;
   border-radius: 12px;
@@ -21,7 +21,7 @@
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
 }
 
-/* --- Image Area --- */
+/* Image Area */
 .prop-image-wrapper {
   position: relative;
   height: 220px;
@@ -34,7 +34,7 @@
   object-fit: cover;
 }
 
-/* --- Favorite Button --- */
+/* Favorite Button */
 .heart-btn {
   position: absolute;
   top: 15px;
@@ -61,7 +61,7 @@
   color: white;
 }
 
-/* --- Text Content --- */
+/* Text Content */
 .prop-content {
   padding: 20px;
   display: flex;

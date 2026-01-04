@@ -3,27 +3,27 @@
     overflow: hidden;
 }
 
-/* --- Slide Images --- */
+/* Slide Images */
 .image-gallery-slide img {
     height: 400px;
-    object-fit: cover; /* Ensures image fills the area without stretching */
+    object-fit: cover; 
     width: 100%;
 }
 
-/* --- Fullscreen Mode Overrides --- */
+/* Fullscreen Mode */
 .fullscreen .image-gallery-slide img {
     height: 100vh;
-    object-fit: contain; /* Show entire image without cropping */
+    object-fit: contain; 
 }
 
-/* --- Navigation Icons --- */
+/* Navigation Icons */
 .image-gallery-icon .image-gallery-svg,
 .image-gallery-fullscreen-button .image-gallery-svg {
     height: 30px;
     width: 30px;
 }
 
-/* --- Thumbnails --- */
+/* Thumbnails */
 .image-gallery-thumbnail:hover {
     border: 4px solid var(--primary-color);
     opacity: 1;
