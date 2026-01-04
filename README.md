@@ -1,5 +1,7 @@
 # Urban Pulse - Estate Agent App
 
+**🚀 Live Demo:** [View Deployed Application](https://shenuka-urban-pulse.netlify.app)
+
 A responsive property search application built with **React** and **Vite**. This project allows users to search for homes, view detailed specifications, and manage a "Favourites" list using drag-and-drop functionality.
 
 ## Key Features
