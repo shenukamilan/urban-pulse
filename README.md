@@ -20,26 +20,45 @@ A responsive property search application built with **React** and **Vite**. This
 * **Styling:** CSS Grid & Flexbox
 * **Testing:** Vitest & React Testing Library
 
-## How to Run
+## Installation & Setup
 
-1.  **Install dependencies:**
+1.  **Clone the repository**
+    ```bash
+    git clone [https://github.com/shenukamilan/estate-agent-app.git](https://github.com/shenukamilan/estate-agent-app.git)
+    cd urban-pulse
+    ```
+
+2.  **Install dependencies**
     ```bash
     npm install
     ```
 
-2.  **Start the app:**
+3.  **Start the app**
     ```bash
     npm run dev
     ```
+    The app will launch at `http://localhost:5173`.
 
-3.  **Run tests:**
+4.  **Run tests**
     ```bash
     npm run test
     ```
 
 ## Project Structure
 
-* `src/components`: Reusable UI components (SearchBox, PropertyCard, Sidebar,..).
-* `src/context`: Global state logic (Favorites & Properties).
-* `src/pages`: Main page views.
-* `public/properties.json`: Mock data for the application.
+```text
+estate-agent-app/
+├── public/              # Static assets (images, properties.json, _redirects)
+├── src/
+│   ├── components/      # Reusable UI components (SearchBox, PropertyCard, etc.)
+│   ├── context/         # Global State (Context API)
+│   ├── pages/           # Main page views (SearchPage, PropertyPage)
+│   ├── tests/           # Unit test files
+│   ├── App.jsx          # Main App component & Routing
+│   ├── main.jsx         # Application entry point
+│   └── setupTests.js    # Test environment configuration
+├── index.html           # HTML entry point
+├── vite.config.js       # Vite build configuration
+├── package.json         # Project dependencies and scripts
+└── README.md            # Project documentation
+
