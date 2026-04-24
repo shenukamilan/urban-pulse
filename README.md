@@ -24,7 +24,7 @@ A responsive property search application built with **React** and **Vite**. This
 
 1.  **Clone the repository**
     ```bash
-    git clone https://github.com/shenukamilan/estate-agent-app.git
+    git clone https://github.com/shenukamilan/urban-pulse.git
     cd estate-agent-app
     ```
 
